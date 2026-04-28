@@ -48,6 +48,5 @@ The project was still assembled, modified, and understood manually.
 
 https://shywam.github.io/
 
---
-*Still improving this — not perfect yet.*
+code is in index part!
 
