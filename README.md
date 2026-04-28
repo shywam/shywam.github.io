@@ -27,11 +27,6 @@ The idea was to create something that can help users understand basic health iss
 * Herbs library with filters and search
 * Clean UI inspired by natural/ayurvedic theme
 
----
- 📁 Structure
-
-* `index.html` → Main file (contains everything)
-* CSS + JS → Included inside the same file
 
  Disclaimer
 
