@@ -1,0 +1,4536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayurveda Health Assistant - Natural Wellness Guide</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <style>
+/* ==========================================
+   Ayurveda Health Assistant - Main Styles
+   Natural Herbal Theme with Green & Beige
+   ========================================== */
+
+/* ===== ROOT VARIABLES ===== */
+:root {
+    /* Color Palette - Natural & Herbal */
+    --primary-green: #2d6a4f;
+    --secondary-green: #40916c;
+    --light-green: #52b788;
+    --very-light-green: #95d5b2;
+    --pale-green: #d8f3dc;
+    
+    --primary-beige: #f4e9d8;
+    --secondary-beige: #e8d5c4;
+    --dark-beige: #d4b896;
+    
+    --text-dark: #1b4332;
+    --text-medium: #2d6a4f;
+    --text-light: #6c757d;
+    
+    --white: #ffffff;
+    --off-white: #fdfcfb;
+    --cream: #faf8f3;
+    
+    --gold: #d4af37;
+    --orange: #ff9b54;
+    
+    /* Typography */
+    --font-heading: 'Lora', serif;
+    --font-body: 'Poppins', sans-serif;
+    
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+    --spacing-xxl: 4rem;
+    
+    /* Border Radius */
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-xl: 20px;
+    
+    /* Shadows */
+    --shadow-sm: 0 2px 8px rgba(29, 67, 50, 0.08);
+    --shadow-md: 0 4px 16px rgba(29, 67, 50, 0.12);
+    --shadow-lg: 0 8px 24px rgba(29, 67, 50, 0.16);
+    
+    /* Transitions */
+    --transition: all 0.3s ease;
+}
+
+/* ===== RESET & BASE ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--text-dark);
+    background-color: var(--cream);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition);
+}
+
+ul {
+    list-style: none;
+}
+
+/* ===== TYPOGRAPHY ===== */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--text-dark);
+}
+
+h1 { font-size: clamp(2rem, 5vw, 3.5rem); }
+h2 { font-size: clamp(1.75rem, 4vw, 2.5rem); }
+h3 { font-size: clamp(1.5rem, 3vw, 2rem); }
+h4 { font-size: clamp(1.25rem, 2.5vw, 1.5rem); }
+
+p {
+    margin-bottom: var(--spacing-sm);
+    color: var(--text-medium);
+}
+
+/* ===== UTILITIES ===== */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+    color: var(--primary-green);
+    position: relative;
+    padding-bottom: var(--spacing-sm);
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--light-green), var(--gold));
+    border-radius: 2px;
+}
+
+/* ===== BUTTONS ===== */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    padding: var(--spacing-sm) var(--spacing-lg);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 500;
+    border: none;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: var(--transition);
+    text-align: center;
+    white-space: nowrap;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary-green), var(--secondary-green));
+    color: var(--white);
+    box-shadow: var(--shadow-sm);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, var(--secondary-green), var(--light-green));
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.btn-secondary {
+    background: var(--secondary-beige);
+    color: var(--text-dark);
+    border: 2px solid var(--dark-beige);
+}
+
+.btn-secondary:hover {
+    background: var(--dark-beige);
+    transform: translateY(-2px);
+}
+
+.btn-light {
+    background: var(--white);
+    color: var(--primary-green);
+    box-shadow: var(--shadow-sm);
+}
+
+.btn-light:hover {
+    background: var(--pale-green);
+    transform: translateY(-2px);
+}
+
+.btn-large {
+    padding: var(--spacing-md) var(--spacing-xl);
+    font-size: 1.1rem;
+}
+
+/* ===== NAVIGATION ===== */
+.navbar {
+    background: var(--white);
+    box-shadow: var(--shadow-sm);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 3px solid var(--pale-green);
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-sm) var(--spacing-md);
+}
+
+.nav-brand {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--primary-green);
+}
+
+.nav-brand i {
+    font-size: 1.5rem;
+    color: var(--light-green);
+}
+
+.nav-menu {
+    display: flex;
+    gap: var(--spacing-lg);
+    align-items: center;
+}
+
+.nav-menu a {
+    color: var(--text-medium);
+    font-weight: 500;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--radius-sm);
+    transition: var(--transition);
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+    color: var(--primary-green);
+    background: var(--pale-green);
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: var(--primary-green);
+    border-radius: 2px;
+    transition: var(--transition);
+}
+
+/* ===== HERO SECTION ===== */
+.hero {
+    position: relative;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--primary-green) 0%, var(--secondary-green) 50%, var(--light-green) 100%);
+    color: var(--white);
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(255,255,255,0.1) 0%, transparent 50%);
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: var(--spacing-xxl) var(--spacing-md);
+}
+
+.hero h1 {
+    color: var(--white);
+    margin-bottom: var(--spacing-md);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    margin-bottom: var(--spacing-xl);
+    color: var(--pale-green);
+}
+
+/* ===== PAGE HEADER ===== */
+.page-header {
+    background: linear-gradient(135deg, var(--primary-green), var(--secondary-green));
+    color: var(--white);
+    padding: var(--spacing-xxl) var(--spacing-md);
+    text-align: center;
+}
+
+.page-header h1 {
+    color: var(--white);
+    margin-bottom: var(--spacing-sm);
+}
+
+.page-header p {
+    color: var(--pale-green);
+    font-size: 1.1rem;
+}
+
+.page-header i {
+    margin-right: var(--spacing-xs);
+}
+
+/* ===== FEATURES SECTION ===== */
+.features {
+    padding: var(--spacing-xxl) var(--spacing-md);
+    background: var(--off-white);
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.feature-card {
+    background: var(--white);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+    border: 2px solid transparent;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--light-green);
+}
+
+.feature-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, var(--pale-green), var(--very-light-green));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--spacing-md);
+}
+
+.feature-icon i {
+    font-size: 2rem;
+    color: var(--primary-green);
+}
+
+.feature-card h3 {
+    margin-bottom: var(--spacing-sm);
+    color: var(--primary-green);
+}
+
+.feature-link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    margin-top: var(--spacing-sm);
+    color: var(--secondary-green);
+    font-weight: 500;
+}
+
+.feature-link:hover {
+    color: var(--light-green);
+    gap: var(--spacing-sm);
+}
+
+/* ===== HOW IT WORKS ===== */
+.how-it-works {
+    padding: var(--spacing-xxl) var(--spacing-md);
+    background: linear-gradient(to bottom, var(--white), var(--pale-green));
+}
+
+.steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-xl);
+    margin-top: var(--spacing-xl);
+}
+
+.step {
+    text-align: center;
+    padding: var(--spacing-lg);
+}
+
+.step-number {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--primary-green), var(--light-green));
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin: 0 auto var(--spacing-md);
+    box-shadow: var(--shadow-md);
+}
+
+.step h3 {
+    margin-bottom: var(--spacing-sm);
+    color: var(--primary-green);
+}
+
+/* ===== CATEGORIES ===== */
+.categories {
+    padding: var(--spacing-xxl) var(--spacing-md);
+    background: var(--off-white);
+}
+
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-md);
+}
+
+.category-card {
+    background: var(--white);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-md);
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+    border: 2px solid transparent;
+}
+
+.category-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--light-green);
+    box-shadow: var(--shadow-md);
+}
+
+.category-card i {
+    font-size: 2.5rem;
+    color: var(--light-green);
+    margin-bottom: var(--spacing-sm);
+}
+
+.category-card h4 {
+    color: var(--primary-green);
+    margin-bottom: var(--spacing-xs);
+}
+
+.category-card p {
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+/* ===== CTA SECTION ===== */
+.cta {
+    padding: var(--spacing-xxl) var(--spacing-md);
+    background: linear-gradient(135deg, var(--secondary-green), var(--primary-green));
+    color: var(--white);
+    text-align: center;
+}
+
+.cta h2 {
+    color: var(--white);
+    margin-bottom: var(--spacing-sm);
+}
+
+.cta p {
+    color: var(--pale-green);
+    font-size: 1.1rem;
+    margin-bottom: var(--spacing-lg);
+}
+
+/* ===== DISCLAIMER ===== */
+.disclaimer {
+    padding: var(--spacing-xl) var(--spacing-md);
+    background: var(--secondary-beige);
+}
+
+.disclaimer-box {
+    background: var(--white);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-md);
+    border-left: 4px solid var(--gold);
+    box-shadow: var(--shadow-sm);
+}
+
+.disclaimer-box h3 {
+    color: var(--primary-green);
+    margin-bottom: var(--spacing-sm);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+}
+
+.disclaimer-box h3 i {
+    color: var(--gold);
+}
+
+.disclaimer-box p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+    background: var(--text-dark);
+    color: var(--pale-green);
+    padding: var(--spacing-xl) var(--spacing-md) var(--spacing-md);
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+}
+
+.footer-section h4 {
+    color: var(--very-light-green);
+    margin-bottom: var(--spacing-sm);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+}
+
+.footer-section ul {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+}
+
+.footer-section a {
+    color: var(--pale-green);
+    font-size: 0.95rem;
+}
+
+.footer-section a:hover {
+    color: var(--white);
+    padding-left: var(--spacing-xs);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: var(--spacing-md);
+    border-top: 1px solid rgba(149, 213, 178, 0.2);
+    color: var(--very-light-green);
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+}
+
+.fade-in:nth-child(2) { animation-delay: 0.2s; }
+.fade-in:nth-child(3) { animation-delay: 0.4s; }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        flex-direction: column;
+        background: var(--white);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: var(--shadow-lg);
+        padding: var(--spacing-lg);
+        gap: var(--spacing-sm);
+    }
+    
+    .nav-menu.active {
+        left: 0;
+    }
+    
+    .hamburger {
+        display: flex;
+    }
+    
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .hamburger.active span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    
+    .hamburger.active span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+    
+    .hero {
+        min-height: 500px;
+    }
+    
+    .steps,
+    .features-grid,
+    .categories-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    :root {
+        --spacing-lg: 1.5rem;
+        --spacing-xl: 2rem;
+        --spacing-xxl: 2.5rem;
+    }
+    
+    .hero {
+        min-height: 400px;
+    }
+}
+
+/* ==========================================
+   SYMPTOM ANALYZER PAGE STYLES
+   ========================================== */
+
+.analyzer-section {
+    padding: var(--spacing-xxl) var(--spacing-md);
+    background: var(--off-white);
+}
+
+.analyzer-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.input-card {
+    background: var(--white);
+    padding: var(--spacing-xl);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    margin-bottom: var(--spacing-lg);
+}
+
+.input-card h2 {
+    color: var(--primary-green);
+    margin-bottom: var(--spacing-md);
+}
+
+.input-instructions {
+    background: var(--pale-green);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-sm);
+    border-left: 4px solid var(--light-green);
+    margin-bottom: var(--spacing-lg);
+}
+
+.input-instructions i {
+    color: var(--primary-green);
+    margin-right: var(--spacing-xs);
+}
+
+.examples {
+    margin-bottom: var(--spacing-lg);
+    padding: var(--spacing-md);
+    background: var(--cream);
+    border-radius: var(--radius-sm);
+}
+
+.examples strong {
+    color: var(--primary-green);
+}
+
+.example-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-xs);
+    margin-top: var(--spacing-sm);
+}
+
+.example-tag {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    background: var(--white);
+    border: 2px solid var(--very-light-green);
+    border-radius: var(--radius-md);
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.example-tag:hover {
+    background: var(--pale-green);
+    border-color: var(--light-green);
+    transform: scale(1.05);
+}
+
+#symptomInput {
+    width: 100%;
+    padding: var(--spacing-md);
+    border: 2px solid var(--very-light-green);
+    border-radius: var(--radius-md);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    resize: vertical;
+    transition: var(--transition);
+    margin-bottom: var(--spacing-md);
+}
+
+#symptomInput:focus {
+    outline: none;
+    border-color: var(--light-green);
+    box-shadow: 0 0 0 3px rgba(82, 183, 136, 0.1);
+}
+
+.loading-state {
+    text-align: center;
+    padding: var(--spacing-xxl);
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+}
+
+.spinner {
+    width: 60px;
+    height: 60px;
+    border: 4px solid var(--pale-green);
+    border-top-color: var(--primary-green);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto var(--spacing-md);
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.loading-subtext {
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+.results-container {
+    background: var(--white);
+    padding: var(--spacing-xl);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+}
+
+.results-container h2 {
+    color: var(--primary-green);
+    margin-bottom: var(--spacing-lg);
+}
+
+.detected-symptoms {
+    background: var(--pale-green);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--spacing-lg);
+}
+
+.detected-symptoms h3 {
+    color: var(--primary-green);
+    margin-bottom: var(--spacing-sm);
+    font-size: 1.1rem;
+}
+
+.symptom-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-xs);
+}
+
+.symptom-badge {
+    background: var(--white);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--radius-sm);
+    font-size: 0.9rem;
+    color: var(--text-medium);
+    border: 1px solid var(--light-green);
+}
+
+.matched-conditions {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+}
+
+.condition-card {
+    background: var(--cream);
+    border: 2px solid var(--very-light-green);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    transition: var(--transition);
+}
+
+.condition-card:hover {
+    border-color: var(--light-green);
+    box-shadow: var(--shadow-md);
+}
+
+.condition-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-md);
+    padding-bottom: var(--spacing-sm);
+    border-bottom: 2px solid var(--pale-green);
+}
+
+.condition-header h3 {
+    color: var(--primary-green);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+}
+
+.condition-category {
+    background: var(--light-green);
+    color: var(--white);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--radius-sm);
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.condition-section {
+    margin-bottom: var(--spacing-md);
+}
+
+.condition-section h4 {
+    color: var(--secondary-green);
+    margin-bottom: var(--spacing-sm);
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+}
+
+.condition-section ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+}
+
+.condition-section li {
+    padding-left: var(--spacing-md);
+    position: relative;
+    color: var(--text-medium);
+}
+
+.condition-section li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--light-green);
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.info-cards {
+    padding: var(--spacing-xl) var(--spacing-md);
+    background: var(--white);
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.info-card {
+    text-align: center;
+    padding: var(--spacing-lg);
+}
+
+.info-card i {
+    font-size: 3rem;
+    color: var(--light-green);
+    margin-bottom: var(--spacing-sm);
+}
+
+.info-card h3 {
+    color: var(--primary-green);
+    margin-bottom: var(--spacing-sm);
+}
+
+.no-results {
+    text-align: center;
+    padding: var(--spacing-xxl);
+    background: var(--cream);
+    border-radius: var(--radius-lg);
+}
+
+.no-results i {
+    font-size: 4rem;
+    color: var(--very-light-green);
+    margin-bottom: var(--spacing-md);
+}
+
+.no-results h3 {
+    color: var(--primary-green);
+    margin-bottom: var(--spacing-md);
+}
+
+.no-results ul {
+    list-style: disc;
+    text-align: left;
+    max-width: 500px;
+    margin: var(--spacing-md) auto;
+    padding-left: var(--spacing-lg);
+}
+
+.no-results a {
+    color: var(--secondary-green);
+    text-decoration: underline;
+}
+
+/* ==========================================
+   HERBS LIBRARY PAGE STYLES
+   ========================================== */
+
+.herbs-controls {
+    padding: var(--spacing-xl) var(--spacing-md);
+    background: var(--white);
+}
+
+.search-bar {
+    max-width: 600px;
+    margin: 0 auto var(--spacing-lg);
+    position: relative;
+}
+
+.search-bar i {
+    position: absolute;
+    left: var(--spacing-md);
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-light);
+    font-size: 1.2rem;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: var(--spacing-md) var(--spacing-md) var(--spacing-md) 3rem;
+    border: 2px solid var(--very-light-green);
+    border-radius: var(--radius-md);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.search-bar input:focus {
+    outline: none;
+    border-color: var(--light-green);
+    box-shadow: 0 0 0 3px rgba(82, 183, 136, 0.1);
+}
+
+.filter-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-xs);
+    justify-content: center;
+}
+
+.filter-btn {
+    padding: var(--spacing-xs) var(--spacing-md);
+    background: var(--white);
+    border: 2px solid var(--very-light-green);
+    border-radius: var(--radius-md);
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-medium);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.filter-btn:hover {
+    background: var(--pale-green);
+    border-color: var(--light-green);
+}
+
+.filter-btn.active {
+    background: var(--primary-green);
+    color: var(--white);
+    border-color: var(--primary-green);
+}
+
+.herbs-section {
+    padding: var(--spacing-xl) var(--spacing-md) var(--spacing-xxl);
+    background: var(--off-white);
+}
+
+.herbs-count {
+    text-align: center;
+    color: var(--text-medium);
+    margin-bottom: var(--spacing-lg);
+    font-weight: 500;
+}
+
+.herbs-count span {
+    color: var(--primary-green);
+    font-weight: 600;
+}
+
+.herbs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.herb-card {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+
+.herb-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--light-green);
+}
+
+.herb-header {
+    margin-bottom: var(--spacing-md);
+    padding-bottom: var(--spacing-sm);
+    border-bottom: 2px solid var(--pale-green);
+}
+
+.herb-name {
+    color: var(--primary-green);
+    margin-bottom: var(--spacing-xs);
+    font-size: 1.5rem;
+}
+
+.herb-scientific {
+    font-style: italic;
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+.herb-category {
+    display: inline-block;
+    background: var(--pale-green);
+    color: var(--primary-green);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--radius-sm);
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-top: var(--spacing-xs);
+}
+
+.herb-description {
+    color: var(--text-medium);
+    margin-bottom: var(--spacing-md);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.herb-benefits {
+    margin-bottom: var(--spacing-sm);
+}
+
+.herb-benefits h4 {
+    color: var(--secondary-green);
+    font-size: 0.95rem;
+    margin-bottom: var(--spacing-xs);
+}
+
+.herb-benefits ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-xs);
+}
+
+.benefit-tag {
+    background: var(--cream);
+    padding: 0.25rem 0.5rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.8rem;
+    color: var(--text-medium);
+}
+
+.herb-learn-more {
+    color: var(--secondary-green);
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    margin-top: var(--spacing-sm);
+}
+
+.herb-learn-more:hover {
+    color: var(--light-green);
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(27, 67, 50, 0.8);
+    animation: fadeIn 0.3s;
+}
+
+.modal-content {
+    background-color: var(--white);
+    margin: 3% auto;
+    padding: 0;
+    border-radius: var(--radius-lg);
+    width: 90%;
+    max-width: 800px;
+    max-height: 85vh;
+    overflow-y: auto;
+    box-shadow: var(--shadow-lg);
+    animation: slideIn 0.3s;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.modal-close {
+    color: var(--text-light);
+    float: right;
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+    padding: var(--spacing-sm) var(--spacing-md);
+    transition: var(--transition);
+}
+
+.modal-close:hover {
+    color: var(--primary-green);
+}
+
+.herb-detail {
+    padding: var(--spacing-xl);
+}
+
+.herb-detail h2 {
+    color: var(--primary-green);
+    margin-bottom: var(--spacing-xs);
+}
+
+.herb-detail .herb-scientific {
+    font-size: 1.1rem;
+    margin-bottom: var(--spacing-md);
+}
+
+.herb-detail .herb-category {
+    display: inline-block;
+    margin-bottom: var(--spacing-lg);
+}
+
+.herb-detail-section {
+    margin-bottom: var(--spacing-lg);
+}
+
+.herb-detail-section h3 {
+    color: var(--secondary-green);
+    margin-bottom: var(--spacing-sm);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+}
+
+.herb-detail-section ul {
+    list-style: none;
+}
+
+.herb-detail-section li {
+    padding: var(--spacing-xs) 0 var(--spacing-xs) var(--spacing-md);
+    position: relative;
+    color: var(--text-medium);
+}
+
+.herb-detail-section li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--light-green);
+    font-weight: bold;
+}
+
+.precaution-box {
+    background: #fff3cd;
+    border-left: 4px solid #ffc107;
+    padding: var(--spacing-md);
+    border-radius: var(--radius-sm);
+    margin-top: var(--spacing-md);
+}
+
+.precaution-box h4 {
+    color: #856404;
+    margin-bottom: var(--spacing-xs);
+}
+
+.precaution-box p {
+    color: #856404;
+    font-size: 0.9rem;
+}
+
+.herbs-info {
+    padding: var(--spacing-xl) var(--spacing-md);
+    background: var(--white);
+}
+
+.info-box {
+    background: var(--cream);
+    padding: var(--spacing-xl);
+    border-radius: var(--radius-lg);
+    border: 2px solid var(--very-light-green);
+}
+
+.info-box h3 {
+    color: var(--primary-green);
+    margin-bottom: var(--spacing-lg);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-xs);
+}
+
+.info-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.info-item h4 {
+    color: var(--secondary-green);
+    margin-bottom: var(--spacing-xs);
+}
+
+/* ==========================================
+   REMEDIES PAGE STYLES
+   ========================================== */
+
+.remedies-controls {
+    padding: var(--spacing-xl) var(--spacing-md);
+    background: var(--white);
+}
+
+.category-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+    justify-content: center;
+    margin-top: var(--spacing-md);
+}
+
+.category-filter-btn {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    padding: var(--spacing-sm) var(--spacing-md);
+    background: var(--white);
+    border: 2px solid var(--very-light-green);
+    border-radius: var(--radius-md);
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--text-medium);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.category-filter-btn:hover {
+    background: var(--pale-green);
+    border-color: var(--light-green);
+    transform: translateY(-2px);
+}
+
+.category-filter-btn.active {
+    background: var(--primary-green);
+    color: var(--white);
+    border-color: var(--primary-green);
+}
+
+.remedies-section {
+    padding: var(--spacing-xl) var(--spacing-md) var(--spacing-xxl);
+    background: var(--off-white);
+}
+
+.remedies-count {
+    text-align: center;
+    color: var(--text-medium);
+    margin-bottom: var(--spacing-lg);
+    font-weight: 500;
+}
+
+.remedies-count span {
+    color: var(--primary-green);
+    font-weight: 600;
+}
+
+.remedies-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xl);
+}
+
+.category-section {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    box-shadow: var(--shadow-sm);
+}
+
+.category-section h2 {
+    color: var(--primary-green);
+    margin-bottom: var(--spacing-lg);
+    padding-bottom: var(--spacing-sm);
+    border-bottom: 3px solid var(--pale-green);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.category-section h2 i {
+    color: var(--light-green);
+}
+
+.conditions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: var(--spacing-md);
+}
+
+.remedy-card {
+    background: var(--cream);
+    border: 2px solid var(--very-light-green);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-md);
+    transition: var(--transition);
+}
+
+.remedy-card:hover {
+    border-color: var(--light-green);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-3px);
+}
+
+.remedy-card h3 {
+    color: var(--primary-green);
+    margin-bottom: var(--spacing-sm);
+    font-size: 1.2rem;
+}
+
+.remedy-section {
+    margin-bottom: var(--spacing-sm);
+}
+
+.remedy-section h4 {
+    color: var(--secondary-green);
+    font-size: 0.9rem;
+    margin-bottom: 0.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.remedy-section h4 i {
+    font-size: 0.8rem;
+}
+
+.remedy-list {
+    font-size: 0.9rem;
+    color: var(--text-medium);
+    line-height: 1.6;
+}
+
+.quick-tips {
+    padding: var(--spacing-xl) var(--spacing-md);
+    background: linear-gradient(to bottom, var(--white), var(--pale-green));
+}
+
+.tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.tip-card {
+    background: var(--white);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
+
+.tip-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+.tip-card i {
+    font-size: 2.5rem;
+    color: var(--light-green);
+    margin-bottom: var(--spacing-sm);
+}
+
+.tip-card h4 {
+    color: var(--primary-green);
+    margin-bottom: var(--spacing-xs);
+}
+
+/* ==========================================
+   ABOUT PAGE STYLES
+   ========================================== */
+
+.about-content {
+    padding: var(--spacing-xxl) var(--spacing-md);
+    background: var(--off-white);
+}
+
+.content-section {
+    background: var(--white);
+    padding: var(--spacing-xl);
+    border-radius: var(--radius-lg);
+    margin-bottom: var(--spacing-xl);
+    box-shadow: var(--shadow-sm);
+}
+
+.content-section h2 {
+    color: var(--primary-green);
+    margin-bottom: var(--spacing-md);
+}
+
+.content-section p {
+    margin-bottom: var(--spacing-md);
+    line-height: 1.8;
+}
+
+.doshas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
+}
+
+.dosha-card {
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    box-shadow: var(--shadow-md);
+    transition: var(--transition);
+}
+
+.dosha-card.vata {
+    background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+    border: 2px solid #64b5f6;
+}
+
+.dosha-card.pitta {
+    background: linear-gradient(135deg, #fff3e0, #ffe0b2);
+    border: 2px solid #ffb74d;
+}
+
+.dosha-card.kapha {
+    background: linear-gradient(135deg, #f1f8e9, #dcedc8);
+    border: 2px solid #9ccc65;
+}
+
+.dosha-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.dosha-icon {
+    width: 80px;
+    height: 80px;
+    background: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--spacing-md);
+    box-shadow: var(--shadow-sm);
+}
+
+.dosha-icon i {
+    font-size: 2.5rem;
+}
+
+.vata .dosha-icon i { color: #1976d2; }
+.pitta .dosha-icon i { color: #f57c00; }
+.kapha .dosha-icon i { color: #689f38; }
+
+.dosha-card h3 {
+    color: var(--text-dark);
+    margin-bottom: var(--spacing-md);
+}
+
+.dosha-content h4 {
+    color: var(--text-dark);
+    font-size: 1rem;
+    margin: var(--spacing-sm) 0 var(--spacing-xs);
+}
+
+.dosha-content ul {
+    list-style: none;
+    margin-bottom: var(--spacing-sm);
+}
+
+.dosha-content li {
+    padding: 0.25rem 0;
+    color: var(--text-medium);
+    font-size: 0.9rem;
+}
+
+.principles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
+}
+
+.principle-card {
+    background: var(--cream);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-md);
+    text-align: center;
+    border: 2px solid var(--very-light-green);
+    transition: var(--transition);
+}
+
+.principle-card:hover {
+    border-color: var(--light-green);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+}
+
+.principle-card i {
+    font-size: 2.5rem;
+    color: var(--light-green);
+    margin-bottom: var(--spacing-sm);
+}
+
+.principle-card h4 {
+    color: var(--primary-green);
+    margin-bottom: var(--spacing-xs);
+}
+
+.treatments-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-lg);
+}
+
+.treatment-item {
+    background: var(--cream);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-md);
+    border-left: 4px solid var(--light-green);
+}
+
+.treatment-item h4 {
+    color: var(--primary-green);
+    margin-bottom: var(--spacing-xs);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+}
+
+.treatment-item i {
+    color: var(--light-green);
+}
+
+.cta-section {
+    text-align: center;
+    background: linear-gradient(135deg, var(--pale-green), var(--very-light-green));
+    border: 2px solid var(--light-green);
+}
+
+.cta-section p {
+    margin-bottom: var(--spacing-lg);
+}
+
+/* ==========================================
+   ADDITIONAL RESPONSIVE STYLES
+   ========================================== */
+
+@media (max-width: 768px) {
+    .herbs-grid,
+    .conditions-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .doshas-grid,
+    .principles-grid,
+    .treatments-list {
+        grid-template-columns: 1fr;
+    }
+    
+    .filter-buttons,
+    .category-filters {
+        flex-direction: column;
+    }
+    
+    .filter-btn,
+    .category-filter-btn {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .modal-content {
+        width: 95%;
+        margin: 5% auto;
+    }
+}
+
+/* SPA Page Visibility */
+.page-section {
+    display: none;
+}
+.page-section.active {
+    display: block;
+}
+    </style>
+</head>
+<body>
+
+    <!-- ============================================================ -->
+    <!-- NAVIGATION (single shared nav) -->
+    <!-- ============================================================ -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <i class="fas fa-leaf"></i>
+                <span>Ayurveda Health Assistant</span>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#" class="nav-link active" data-page="home">Home</a></li>
+                <li><a href="#" class="nav-link" data-page="analyzer">Symptom Analyzer</a></li>
+                <li><a href="#" class="nav-link" data-page="herbs">Herbs Library</a></li>
+                <li><a href="#" class="nav-link" data-page="remedies">Remedies</a></li>
+                <li><a href="#" class="nav-link" data-page="about">About Ayurveda</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ============================================================ -->
+    <!-- PAGE: HOME (index.html content) -->
+    <!-- ============================================================ -->
+    <div id="page-home" class="page-section active">
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-overlay"></div>
+            <div class="container hero-content">
+                <h1 class="fade-in">Welcome to Natural Wellness</h1>
+                <p class="hero-subtitle fade-in">Discover the ancient wisdom of Ayurveda for modern health challenges</p>
+                <a href="#" class="btn btn-primary fade-in nav-link" data-page="analyzer">
+                    <i class="fas fa-stethoscope"></i> Analyze Your Symptoms
+                </a>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features">
+            <div class="container">
+                <h2 class="section-title">What We Offer</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-stethoscope"></i></div>
+                        <h3>Symptom Analyzer</h3>
+                        <p>Describe your health concerns and get personalized Ayurvedic recommendations based on centuries-old wisdom.</p>
+                        <a href="#" class="feature-link nav-link" data-page="analyzer">Try Now <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-leaf"></i></div>
+                        <h3>Herbs Library</h3>
+                        <p>Explore detailed information about 20+ powerful Ayurvedic herbs, their benefits, uses, and preparation methods.</p>
+                        <a href="#" class="feature-link nav-link" data-page="herbs">Explore Herbs <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-spa"></i></div>
+                        <h3>Natural Remedies</h3>
+                        <p>Access a comprehensive collection of time-tested home remedies for common health conditions.</p>
+                        <a href="#" class="feature-link nav-link" data-page="remedies">View Remedies <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-book-open"></i></div>
+                        <h3>Ayurvedic Knowledge</h3>
+                        <p>Learn about the principles of Ayurveda, doshas, and how to maintain balance in body and mind.</p>
+                        <a href="#" class="feature-link nav-link" data-page="about">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works -->
+        <section class="how-it-works">
+            <div class="container">
+                <h2 class="section-title">How It Works</h2>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <h3>Describe Symptoms</h3>
+                        <p>Tell us about your health concerns in your own words</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <h3>AI Analysis</h3>
+                        <p>Our system matches your symptoms with our Ayurvedic knowledge base</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <h3>Get Recommendations</h3>
+                        <p>Receive personalized herbs, remedies, diet, and lifestyle suggestions</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Health Categories -->
+        <section class="categories">
+            <div class="container">
+                <h2 class="section-title">Health Categories We Cover</h2>
+                <div class="categories-grid">
+                    <div class="category-card"><i class="fas fa-lungs"></i><h4>Respiratory</h4><p>Cold, Cough, Asthma, Bronchitis</p></div>
+                    <div class="category-card"><i class="fas fa-stomach"></i><h4>Digestive</h4><p>Indigestion, Acidity, Constipation</p></div>
+                    <div class="category-card"><i class="fas fa-brain"></i><h4>Mental Health</h4><p>Stress, Anxiety, Insomnia</p></div>
+                    <div class="category-card"><i class="fas fa-bone"></i><h4>Joint &amp; Muscle</h4><p>Arthritis, Back Pain, Joint Pain</p></div>
+                    <div class="category-card"><i class="fas fa-hand-sparkles"></i><h4>Skin Care</h4><p>Acne, Eczema, Hair Loss</p></div>
+                    <div class="category-card"><i class="fas fa-shield-alt"></i><h4>Immunity</h4><p>Weak Immunity, Frequent Infections</p></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta">
+            <div class="container">
+                <h2>Ready to Start Your Wellness Journey?</h2>
+                <p>Experience the healing power of Ayurveda today</p>
+                <a href="#" class="btn btn-light nav-link" data-page="analyzer">
+                    <i class="fas fa-heartbeat"></i> Start Symptom Analysis
+                </a>
+            </div>
+        </section>
+
+        <!-- Disclaimer -->
+        <section class="disclaimer">
+            <div class="container">
+                <div class="disclaimer-box">
+                    <h3><i class="fas fa-info-circle"></i> Important Disclaimer</h3>
+                    <p>The information provided on this website is for educational and wellness purposes only. It is not intended to be a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of your physician or other qualified health provider with any questions you may have regarding a medical condition.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-section">
+                        <h4><i class="fas fa-leaf"></i> Ayurveda Health</h4>
+                        <p>Bringing ancient wisdom to modern wellness</p>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="#" class="nav-link" data-page="home">Home</a></li>
+                            <li><a href="#" class="nav-link" data-page="analyzer">Symptom Analyzer</a></li>
+                            <li><a href="#" class="nav-link" data-page="herbs">Herbs Library</a></li>
+                            <li><a href="#" class="nav-link" data-page="remedies">Remedies</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Resources</h4>
+                        <ul>
+                            <li><a href="#" class="nav-link" data-page="about">About Ayurveda</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms of Use</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2026 Ayurveda Health Assistant. Created by Swaraj,Sumit,Ritesh</p>
+                </div>
+            </div>
+        </footer>
+    </div><!-- end #page-home -->
+
+
+    <!-- ============================================================ -->
+    <!-- PAGE: SYMPTOM ANALYZER (analyzer.html content) -->
+    <!-- ============================================================ -->
+    <div id="page-analyzer" class="page-section">
+
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <h1><i class="fas fa-stethoscope"></i> Symptom Analyzer</h1>
+                <p>Describe your health concerns and get personalized Ayurvedic recommendations</p>
+            </div>
+        </section>
+
+        <!-- Analyzer Section -->
+        <section class="analyzer-section">
+            <div class="container">
+                <div class="analyzer-container">
+                    <!-- Input Area -->
+                    <div class="input-card" id="analyzerInputCard">
+                        <h2>Tell Us Your Symptoms</h2>
+                        <p class="input-instructions">
+                            <i class="fas fa-info-circle"></i>
+                            Describe your health issues in detail. For example: "I have headache, stress, and poor sleep" or "experiencing bloating, gas, and indigestion"
+                        </p>
+                        <div class="examples">
+                            <p><strong>Example queries:</strong></p>
+                            <div class="example-tags">
+                                <span class="example-tag" onclick="fillExample('I have cold, cough and runny nose')">Cold &amp; Cough</span>
+                                <span class="example-tag" onclick="fillExample('Experiencing stress, anxiety and trouble sleeping')">Stress &amp; Sleep Issues</span>
+                                <span class="example-tag" onclick="fillExample('Joint pain and stiffness in knees')">Joint Pain</span>
+                                <span class="example-tag" onclick="fillExample('Acne and oily skin problems')">Skin Problems</span>
+                                <span class="example-tag" onclick="fillExample('Bloating, gas and indigestion after meals')">Digestive Issues</span>
+                            </div>
+                        </div>
+                        <textarea id="symptomInput" placeholder="Type your symptoms here... (e.g., I have headache, stress, and poor sleep)" rows="6"></textarea>
+                        <button id="analyzeBtn" class="btn btn-primary btn-large">
+                            <i class="fas fa-search"></i> Analyze Symptoms
+                        </button>
+                        <button id="clearBtn" class="btn btn-secondary btn-large">
+                            <i class="fas fa-redo"></i> Clear &amp; Start Over
+                        </button>
+                    </div>
+
+                    <!-- Loading State -->
+                    <div id="loadingState" class="loading-state" style="display: none;">
+                        <div class="spinner"></div>
+                        <p>Analyzing your symptoms...</p>
+                        <p class="loading-subtext">Searching through our database of 105+ conditions</p>
+                    </div>
+
+                    <!-- Results Area -->
+                    <div id="resultsContainer" class="results-container" style="display: none;">
+                        <h2><i class="fas fa-clipboard-list"></i> Analysis Results</h2>
+                        <div id="detectedSymptoms" class="detected-symptoms"></div>
+                        <div id="matchedConditions" class="matched-conditions"></div>
+                        <div id="noResults" class="no-results" style="display: none;">
+                            <i class="fas fa-search"></i>
+                            <h3>No Matching Conditions Found</h3>
+                            <p>We couldn't find any conditions matching your symptoms. Try:</p>
+                            <ul>
+                                <li>Using different or more common symptom descriptions</li>
+                                <li>Being more specific about your symptoms</li>
+                                <li>Checking the spelling of medical terms</li>
+                            </ul>
+                            <p>Or browse our <a href="#" class="nav-link" data-page="herbs">Herbs Library</a> and <a href="#" class="nav-link" data-page="remedies">Remedies Guide</a> for general wellness information.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Info Cards -->
+        <section class="info-cards">
+            <div class="container">
+                <div class="info-grid">
+                    <div class="info-card"><i class="fas fa-shield-alt"></i><h3>Safe &amp; Natural</h3><p>All recommendations are based on traditional Ayurvedic practices</p></div>
+                    <div class="info-card"><i class="fas fa-book-medical"></i><h3>Evidence-Based</h3><p>Information sourced from authentic Ayurvedic texts and practices</p></div>
+                    <div class="info-card"><i class="fas fa-user-md"></i><h3>Consult Professionals</h3><p>Always consult healthcare providers for serious conditions</p></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Disclaimer -->
+        <section class="disclaimer">
+            <div class="container">
+                <div class="disclaimer-box">
+                    <h3><i class="fas fa-exclamation-triangle"></i> Medical Disclaimer</h3>
+                    <p>This symptom analyzer is for educational purposes only and does not replace professional medical advice. If you have severe symptoms, persistent health issues, or medical emergencies, please consult a qualified healthcare provider immediately.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-section"><h4><i class="fas fa-leaf"></i> Ayurveda Health</h4><p>Bringing ancient wisdom to modern wellness</p></div>
+                    <div class="footer-section">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="#" class="nav-link" data-page="home">Home</a></li>
+                            <li><a href="#" class="nav-link" data-page="analyzer">Symptom Analyzer</a></li>
+                            <li><a href="#" class="nav-link" data-page="herbs">Herbs Library</a></li>
+                            <li><a href="#" class="nav-link" data-page="remedies">Remedies</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Resources</h4>
+                        <ul>
+                            <li><a href="#" class="nav-link" data-page="about">About Ayurveda</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms of Use</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-bottom"><p>&copy; 2024 Made by Sumit,Swaraj,Ritesh.</p></div>
+            </div>
+        </footer>
+    </div><!-- end #page-analyzer -->
+
+
+    <!-- ============================================================ -->
+    <!-- PAGE: HERBS LIBRARY (herbs.html content) -->
+    <!-- ============================================================ -->
+    <div id="page-herbs" class="page-section">
+
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <h1><i class="fas fa-leaf"></i> Ayurvedic Herbs Library</h1>
+                <p>Explore the healing power of nature's pharmacy</p>
+            </div>
+        </section>
+
+        <!-- Search and Filter -->
+        <section class="herbs-controls">
+            <div class="container">
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="herbSearch" placeholder="Search herbs by name, benefits, or uses...">
+                </div>
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-category="all">All Herbs</button>
+                    <button class="filter-btn" data-category="Respiratory &amp; Immunity">Respiratory</button>
+                    <button class="filter-btn" data-category="Adaptogen &amp; Energy">Energy</button>
+                    <button class="filter-btn" data-category="Digestive">Digestive</button>
+                    <button class="filter-btn" data-category="Brain &amp; Nervous System">Brain</button>
+                    <button class="filter-btn" data-category="Skin">Skin</button>
+                    <button class="filter-btn" data-category="Women's Health">Women's Health</button>
+                    <button class="filter-btn" data-category="Heart Health">Heart</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Herbs Grid -->
+        <section class="herbs-section">
+            <div class="container">
+                <div id="herbsCount" class="herbs-count">Showing <span id="countNumber">20</span> herbs</div>
+                <div id="herbsGrid" class="herbs-grid"></div>
+                <div id="noHerbsFound" class="no-results" style="display: none;">
+                    <i class="fas fa-leaf"></i>
+                    <h3>No Herbs Found</h3>
+                    <p>Try adjusting your search or filter criteria</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Herb Detail Modal -->
+        <div id="herbModal" class="modal">
+            <div class="modal-content">
+                <span class="modal-close">&times;</span>
+                <div id="herbDetail" class="herb-detail"></div>
+            </div>
+        </div>
+
+        <!-- Info Section -->
+        <section class="herbs-info">
+            <div class="container">
+                <div class="info-box">
+                    <h3><i class="fas fa-lightbulb"></i> Using Herbs Safely</h3>
+                    <div class="info-content">
+                        <div class="info-item"><h4>Quality Matters</h4><p>Always source herbs from reputable suppliers to ensure purity and potency.</p></div>
+                        <div class="info-item"><h4>Start Slow</h4><p>Begin with smaller doses to see how your body responds before increasing.</p></div>
+                        <div class="info-item"><h4>Consult Experts</h4><p>Speak with an Ayurvedic practitioner or healthcare provider, especially if you're on medications.</p></div>
+                        <div class="info-item"><h4>Read Precautions</h4><p>Each herb has specific precautions. Always review them before use.</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-section"><h4><i class="fas fa-leaf"></i> Ayurveda Health</h4><p>Bringing ancient wisdom to modern wellness</p></div>
+                    <div class="footer-section">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="#" class="nav-link" data-page="home">Home</a></li>
+                            <li><a href="#" class="nav-link" data-page="analyzer">Symptom Analyzer</a></li>
+                            <li><a href="#" class="nav-link" data-page="herbs">Herbs Library</a></li>
+                            <li><a href="#" class="nav-link" data-page="remedies">Remedies</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Resources</h4>
+                        <ul>
+                            <li><a href="#" class="nav-link" data-page="about">About Ayurveda</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms of Use</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-bottom"><p>&copy; 2024 Ayurveda Health Assistant. All rights reserved.</p></div>
+            </div>
+        </footer>
+    </div><!-- end #page-herbs -->
+
+
+    <!-- ============================================================ -->
+    <!-- PAGE: REMEDIES (remedies.html content) -->
+    <!-- ============================================================ -->
+    <div id="page-remedies" class="page-section">
+
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <h1><i class="fas fa-spa"></i> Natural Remedies Guide</h1>
+                <p>Browse time-tested Ayurvedic solutions by category</p>
+            </div>
+        </section>
+
+        <!-- Category Filter -->
+        <section class="remedies-controls">
+            <div class="container">
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="remedySearch" placeholder="Search conditions or remedies...">
+                </div>
+                <div class="category-filters">
+                    <button class="category-filter-btn active" data-category="all"><i class="fas fa-th"></i> All Categories</button>
+                    <button class="category-filter-btn" data-category="Respiratory"><i class="fas fa-lungs"></i> Respiratory</button>
+                    <button class="category-filter-btn" data-category="Digestive"><i class="fas fa-stomach"></i> Digestive</button>
+                    <button class="category-filter-btn" data-category="Mental Health"><i class="fas fa-brain"></i> Mental Health</button>
+                    <button class="category-filter-btn" data-category="Joint &amp; Muscle"><i class="fas fa-bone"></i> Joint &amp; Muscle</button>
+                    <button class="category-filter-btn" data-category="Skin"><i class="fas fa-hand-sparkles"></i> Skin</button>
+                    <button class="category-filter-btn" data-category="Cardiovascular"><i class="fas fa-heartbeat"></i> Cardiovascular</button>
+                    <button class="category-filter-btn" data-category="Women's Health"><i class="fas fa-female"></i> Women's Health</button>
+                    <button class="category-filter-btn" data-category="Immunity"><i class="fas fa-shield-alt"></i> Immunity</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Remedies Content -->
+        <section class="remedies-section">
+            <div class="container">
+                <div id="remediesCount" class="remedies-count">Showing <span id="remediesCountNumber">105</span> conditions</div>
+                <div id="remediesContainer" class="remedies-container"></div>
+                <div id="noRemediesFound" class="no-results" style="display: none;">
+                    <i class="fas fa-search"></i>
+                    <h3>No Remedies Found</h3>
+                    <p>Try adjusting your search or category filter</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Tips -->
+        <section class="quick-tips">
+            <div class="container">
+                <h2 class="section-title">Quick Ayurvedic Tips</h2>
+                <div class="tips-grid">
+                    <div class="tip-card"><i class="fas fa-sun"></i><h4>Morning Routine</h4><p>Start your day with warm lemon water to stimulate digestion and detoxification.</p></div>
+                    <div class="tip-card"><i class="fas fa-utensils"></i><h4>Mindful Eating</h4><p>Eat your largest meal at midday when digestive fire (Agni) is strongest.</p></div>
+                    <div class="tip-card"><i class="fas fa-spa"></i><h4>Self-Care</h4><p>Practice Abhyanga (oil massage) before bathing to nourish skin and calm nerves.</p></div>
+                    <div class="tip-card"><i class="fas fa-moon"></i><h4>Sleep Hygiene</h4><p>Wind down with herbal tea and avoid screens an hour before bed for better sleep.</p></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Disclaimer -->
+        <section class="disclaimer">
+            <div class="container">
+                <div class="disclaimer-box">
+                    <h3><i class="fas fa-info-circle"></i> Usage Guidelines</h3>
+                    <p>These remedies are traditional Ayurvedic practices passed down through generations. While generally safe, individual responses may vary. Always start with small amounts, monitor your body's response, and consult with healthcare professionals.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-section"><h4><i class="fas fa-leaf"></i> Ayurveda Health</h4><p>Bringing ancient wisdom to modern wellness</p></div>
+                    <div class="footer-section">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="#" class="nav-link" data-page="home">Home</a></li>
+                            <li><a href="#" class="nav-link" data-page="analyzer">Symptom Analyzer</a></li>
+                            <li><a href="#" class="nav-link" data-page="herbs">Herbs Library</a></li>
+                            <li><a href="#" class="nav-link" data-page="remedies">Remedies</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Resources</h4>
+                        <ul>
+                            <li><a href="#" class="nav-link" data-page="about">About Ayurveda</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms of Use</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-bottom"><p>&copy; 2024 Ayurveda Health Assistant. All rights reserved.</p></div>
+            </div>
+        </footer>
+    </div><!-- end #page-remedies -->
+
+
+    <!-- ============================================================ -->
+    <!-- PAGE: ABOUT (about.html content) -->
+    <!-- ============================================================ -->
+    <div id="page-about" class="page-section">
+
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <h1><i class="fas fa-om"></i> About Ayurveda</h1>
+                <p>Ancient wisdom for modern wellness</p>
+            </div>
+        </section>
+
+        <!-- About Content -->
+        <section class="about-content">
+            <div class="container">
+
+                <div class="content-section">
+                    <h2>What is Ayurveda?</h2>
+                    <p>Ayurveda, meaning "Science of Life," is one of the world's oldest holistic healing systems, developed more than 5,000 years ago in India. It is based on the belief that health and wellness depend on a delicate balance between the mind, body, and spirit.</p>
+                    <p>Rather than focusing on fighting disease, Ayurveda emphasizes promoting good health through prevention and maintaining balance. However, treatments may be recommended for specific health problems when needed.</p>
+                </div>
+
+                <!-- The Three Doshas -->
+                <div class="content-section">
+                    <h2>The Three Doshas</h2>
+                    <p>According to Ayurveda, everything in the universe – living or not – is connected. Good health is achieved when your mind, body, and spirit are in harmony with the universe.</p>
+                    <p>Ayurveda believes that everyone is made of five basic elements: space, air, fire, water, and earth. These combine in the human body to form three life forces or energies, called doshas:</p>
+                    <div class="doshas-grid">
+                        <div class="dosha-card vata">
+                            <div class="dosha-icon"><i class="fas fa-wind"></i></div>
+                            <h3>Vata (Space + Air)</h3>
+                            <div class="dosha-content">
+                                <h4>Characteristics:</h4>
+                                <ul><li>Controls movement, breathing, circulation</li><li>Creative, energetic, flexible</li><li>Light, cold, dry qualities</li></ul>
+                                <h4>When Imbalanced:</h4>
+                                <ul><li>Anxiety, fear, insomnia</li><li>Dry skin, constipation</li><li>Joint pain, weight loss</li></ul>
+                                <h4>Balancing Tips:</h4>
+                                <ul><li>Warm, cooked, nourishing foods</li><li>Regular routine and rest</li><li>Oil massage, meditation</li></ul>
+                            </div>
+                        </div>
+                        <div class="dosha-card pitta">
+                            <div class="dosha-icon"><i class="fas fa-fire"></i></div>
+                            <h3>Pitta (Fire + Water)</h3>
+                            <div class="dosha-content">
+                                <h4>Characteristics:</h4>
+                                <ul><li>Controls digestion, metabolism, temperature</li><li>Intelligent, focused, ambitious</li><li>Hot, sharp, intense qualities</li></ul>
+                                <h4>When Imbalanced:</h4>
+                                <ul><li>Anger, irritability, inflammation</li><li>Heartburn, acidity, ulcers</li><li>Skin rashes, excessive heat</li></ul>
+                                <h4>Balancing Tips:</h4>
+                                <ul><li>Cooling foods, avoid spicy</li><li>Moderate activities, avoid overwork</li><li>Swimming, moonlight walks</li></ul>
+                            </div>
+                        </div>
+                        <div class="dosha-card kapha">
+                            <div class="dosha-icon"><i class="fas fa-water"></i></div>
+                            <h3>Kapha (Water + Earth)</h3>
+                            <div class="dosha-content">
+                                <h4>Characteristics:</h4>
+                                <ul><li>Controls growth, strength, immunity</li><li>Calm, loving, grounded</li><li>Heavy, slow, steady qualities</li></ul>
+                                <h4>When Imbalanced:</h4>
+                                <ul><li>Weight gain, lethargy, depression</li><li>Congestion, excess mucus</li><li>Diabetes, fluid retention</li></ul>
+                                <h4>Balancing Tips:</h4>
+                                <ul><li>Light, warm, spicy foods</li><li>Regular vigorous exercise</li><li>Stay active and stimulated</li></ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Core Principles -->
+                <div class="content-section">
+                    <h2>Core Principles of Ayurveda</h2>
+                    <div class="principles-grid">
+                        <div class="principle-card"><i class="fas fa-balance-scale"></i><h4>Balance &amp; Harmony</h4><p>Health is a state of balance between body, mind, and consciousness. Disease occurs when this balance is disrupted.</p></div>
+                        <div class="principle-card"><i class="fas fa-user"></i><h4>Individual Constitution</h4><p>Each person has a unique combination of doshas. Treatment is personalized based on individual constitution.</p></div>
+                        <div class="principle-card"><i class="fas fa-shield-virus"></i><h4>Prevention First</h4><p>Prevention is better than cure. Ayurveda focuses on maintaining health and preventing disease through lifestyle.</p></div>
+                        <div class="principle-card"><i class="fas fa-leaf"></i><h4>Natural Healing</h4><p>Use of natural herbs, foods, and therapies to support the body's innate healing ability.</p></div>
+                        <div class="principle-card"><i class="fas fa-utensils"></i><h4>Food as Medicine</h4><p>Proper diet is the foundation of health. Food should be chosen according to constitution and season.</p></div>
+                        <div class="principle-card"><i class="fas fa-brain"></i><h4>Mind-Body Connection</h4><p>Mental and emotional health directly impact physical health. Both must be addressed for complete wellness.</p></div>
+                    </div>
+                </div>
+
+                <!-- Ayurvedic Treatments -->
+                <div class="content-section">
+                    <h2>Ayurvedic Treatment Approaches</h2>
+                    <div class="treatments-list">
+                        <div class="treatment-item"><h4><i class="fas fa-seedling"></i> Herbal Medicine</h4><p>Use of plant-based medicines and formulations tailored to individual needs and conditions.</p></div>
+                        <div class="treatment-item"><h4><i class="fas fa-apple-alt"></i> Diet &amp; Nutrition</h4><p>Personalized dietary recommendations based on dosha type, season, and health condition.</p></div>
+                        <div class="treatment-item"><h4><i class="fas fa-spa"></i> Panchakarma</h4><p>Detoxification and cleansing therapies to eliminate toxins and restore balance.</p></div>
+                        <div class="treatment-item"><h4><i class="fas fa-praying-hands"></i> Yoga &amp; Meditation</h4><p>Physical postures, breathing exercises, and meditation practices for mind-body harmony.</p></div>
+                        <div class="treatment-item"><h4><i class="fas fa-oil-can"></i> Massage Therapies</h4><p>Therapeutic oil massages (Abhyanga) to promote circulation and relaxation.</p></div>
+                        <div class="treatment-item"><h4><i class="fas fa-clock"></i> Daily Routines (Dinacharya)</h4><p>Establishing healthy daily and seasonal routines aligned with natural rhythms.</p></div>
+                    </div>
+                </div>
+
+                <!-- Modern Relevance -->
+                <div class="content-section">
+                    <h2>Ayurveda in Modern Times</h2>
+                    <p>Today, Ayurveda is recognized worldwide as a complementary and alternative medicine system. The World Health Organization (WHO) acknowledges Ayurveda as a traditional medicine system with potential benefits.</p>
+                    <p>Modern scientific research is increasingly validating many Ayurvedic principles and herbal treatments. Many Ayurvedic herbs like turmeric, ashwagandha, and tulsi have been extensively studied and shown to have significant health benefits.</p>
+                    <p>Ayurveda's holistic approach complements modern medicine by focusing on prevention, personalized care, and natural healing methods. It offers valuable insights for managing stress, chronic conditions, and promoting overall wellness.</p>
+                </div>
+
+                <!-- Getting Started -->
+                <div class="content-section cta-section">
+                    <h2>Start Your Ayurvedic Journey</h2>
+                    <p>Ready to experience the benefits of Ayurvedic wisdom? Try our symptom analyzer to get personalized recommendations based on your unique health concerns.</p>
+                    <a href="#" class="btn btn-primary btn-large nav-link" data-page="analyzer">
+                        <i class="fas fa-stethoscope"></i> Analyze Your Symptoms
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-section"><h4><i class="fas fa-leaf"></i> Ayurveda Health</h4><p>Bringing ancient wisdom to modern wellness</p></div>
+                    <div class="footer-section">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="#" class="nav-link" data-page="home">Home</a></li>
+                            <li><a href="#" class="nav-link" data-page="analyzer">Symptom Analyzer</a></li>
+                            <li><a href="#" class="nav-link" data-page="herbs">Herbs Library</a></li>
+                            <li><a href="#" class="nav-link" data-page="remedies">Remedies</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Resources</h4>
+                        <ul>
+                            <li><a href="#" class="nav-link" data-page="about">About Ayurveda</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms of Use</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-bottom"><p>&copy; 2024 Ayurveda Health Assistant. All rights reserved.</p></div>
+            </div>
+        </footer>
+    </div><!-- end #page-about -->
+
+
+    <!-- ============================================================ -->
+    <!-- INLINE DATA (JSON) -->
+    <!-- ============================================================ -->
+    <script>
+        // Inline JSON data - no fetch needed
+        window._conditionsData = [
+  {
+    "id": 1,
+    "name": "Common Cold",
+    "category": "Respiratory",
+    "symptoms": ["cold", "cough", "runny nose", "sneezing", "congestion", "nasal", "mucus"],
+    "herbs": ["Tulsi (Holy Basil)", "Ginger", "Turmeric", "Black Pepper", "Cinnamon"],
+    "remedies": ["Warm ginger tea with honey", "Tulsi decoction", "Steam inhalation with eucalyptus", "Turmeric milk before bed"],
+    "diet": ["Warm soups", "Herbal teas", "Citrus fruits", "Avoid cold drinks and dairy"],
+    "lifestyle": ["Rest adequately", "Steam inhalation twice daily", "Drink warm water frequently", "Practice Pranayama"],
+    "prevention": ["Boost immunity with daily Tulsi tea", "Maintain good hygiene", "Stay warm in cold weather"]
+  },
+  {
+    "id": 2,
+    "name": "Indigestion",
+    "category": "Digestive",
+    "symptoms": ["indigestion", "bloating", "gas", "heaviness", "stomach discomfort", "acidity", "upset stomach"],
+    "herbs": ["Ginger", "Fennel", "Cumin", "Ajwain (Carom Seeds)", "Mint"],
+    "remedies": ["Ginger-lemon water after meals", "Fennel tea", "Chew roasted cumin seeds", "Buttermilk with cumin"],
+    "diet": ["Light, easy-to-digest foods", "Avoid heavy, oily foods", "Eat smaller portions", "Include fiber-rich foods"],
+    "lifestyle": ["Eat mindfully and slowly", "Walk after meals", "Avoid lying down immediately after eating", "Practice Vajrasana"],
+    "prevention": ["Eat at regular times", "Avoid overeating", "Stay hydrated", "Reduce stress"]
+  },
+  {
+    "id": 3,
+    "name": "Stress and Anxiety",
+    "category": "Mental Health",
+    "symptoms": ["stress", "anxiety", "tension", "worry", "nervousness", "restless", "anxious", "nervous"],
+    "herbs": ["Ashwagandha", "Brahmi", "Jatamansi", "Shankhpushpi", "Tulsi"],
+    "remedies": ["Ashwagandha powder with warm milk at night", "Brahmi tea", "Meditation with aromatherapy", "Chamomile tea"],
+    "diet": ["Warm, nourishing foods", "Avoid caffeine and alcohol", "Include nuts and seeds", "Herbal teas"],
+    "lifestyle": ["Practice daily meditation", "Yoga and Pranayama", "Maintain regular sleep schedule", "Spend time in nature"],
+    "prevention": ["Regular meditation practice", "Adequate sleep", "Exercise regularly", "Practice mindfulness"]
+  },
+  {
+    "id": 4,
+    "name": "Insomnia",
+    "category": "Mental Health",
+    "symptoms": ["insomnia", "sleeplessness", "sleep", "can't sleep", "difficulty sleeping", "poor sleep", "trouble sleeping"],
+    "herbs": ["Ashwagandha", "Brahmi", "Jatamansi", "Valerian", "Nutmeg"],
+    "remedies": ["Warm milk with nutmeg", "Ashwagandha with milk before bed", "Brahmi oil scalp massage", "Lavender aromatherapy"],
+    "diet": ["Light dinner early in evening", "Warm milk", "Avoid heavy meals at night", "Herbal teas"],
+    "lifestyle": ["Maintain sleep routine", "Avoid screens before bed", "Practice Yoga Nidra", "Keep bedroom cool and dark"],
+    "prevention": ["Regular sleep schedule", "Daily exercise", "Stress management", "Evening meditation"]
+  },
+  {
+    "id": 5,
+    "name": "Headache",
+    "category": "Neurological",
+    "symptoms": ["headache", "head pain", "migraine", "head ache", "pressure in head"],
+    "herbs": ["Brahmi", "Peppermint", "Lavender", "Ginger", "Feverfew"],
+    "remedies": ["Peppermint oil temple massage", "Ginger tea", "Cold compress on forehead", "Brahmi powder with ghee"],
+    "diet": ["Stay hydrated", "Avoid trigger foods", "Regular meals", "Magnesium-rich foods"],
+    "lifestyle": ["Adequate sleep", "Reduce screen time", "Practice deep breathing", "Avoid bright lights"],
+    "prevention": ["Manage stress", "Regular sleep pattern", "Stay hydrated", "Avoid trigger foods"]
+  },
+  {
+    "id": 6,
+    "name": "Constipation",
+    "category": "Digestive",
+    "symptoms": ["constipation", "irregular bowel", "hard stools", "difficulty passing stool", "blocked"],
+    "herbs": ["Triphala", "Isabgol (Psyllium)", "Senna", "Haritaki", "Castor Oil"],
+    "remedies": ["Triphala powder at night with warm water", "Isabgol husk with milk", "Warm lemon water in morning", "Aloe vera juice"],
+    "diet": ["High-fiber foods", "Fruits and vegetables", "Whole grains", "Plenty of water"],
+    "lifestyle": ["Regular meal times", "Morning walk", "Establish toilet routine", "Abdominal massage"],
+    "prevention": ["High-fiber diet", "Adequate water intake", "Regular exercise", "Avoid processed foods"]
+  },
+  {
+    "id": 7,
+    "name": "Acidity",
+    "category": "Digestive",
+    "symptoms": ["acidity", "heartburn", "burning sensation", "acid reflux", "sour taste", "chest burn"],
+    "herbs": ["Amla (Indian Gooseberry)", "Licorice", "Fennel", "Coconut", "Coriander"],
+    "remedies": ["Amla juice before meals", "Coconut water", "Fennel seeds after meals", "Licorice root tea"],
+    "diet": ["Alkaline foods", "Avoid spicy and fried foods", "Smaller frequent meals", "Buttermilk"],
+    "lifestyle": ["Eat slowly", "Avoid lying down after eating", "Elevate head while sleeping", "Reduce stress"],
+    "prevention": ["Avoid trigger foods", "Eat at regular times", "Don't skip meals", "Manage stress"]
+  },
+  {
+    "id": 8,
+    "name": "Diarrhea",
+    "category": "Digestive",
+    "symptoms": ["diarrhea", "loose stools", "frequent bowel movements", "watery stool", "stomach upset"],
+    "herbs": ["Coriander", "Fenugreek", "Ginger", "Cumin", "Nutmeg"],
+    "remedies": ["Buttermilk with roasted cumin", "Pomegranate peel powder", "Banana with yogurt", "Ginger tea"],
+    "diet": ["BRAT diet (Banana, Rice, Applesauce, Toast)", "Avoid dairy initially", "Oral rehydration solutions", "Cooked vegetables"],
+    "lifestyle": ["Stay hydrated", "Rest adequately", "Maintain hygiene", "Avoid solid foods initially"],
+    "prevention": ["Food hygiene", "Clean drinking water", "Proper food storage", "Hand washing"]
+  },
+  {
+    "id": 9,
+    "name": "Joint Pain",
+    "category": "Joint & Muscle",
+    "symptoms": ["joint pain", "arthritis", "knee pain", "joint stiffness", "swollen joints", "inflammation"],
+    "herbs": ["Ashwagandha", "Guggul", "Turmeric", "Ginger", "Boswellia"],
+    "remedies": ["Turmeric milk", "Warm sesame oil massage", "Ginger tea", "Hot and cold compress"],
+    "diet": ["Anti-inflammatory foods", "Turmeric in meals", "Omega-3 rich foods", "Avoid nightshade vegetables"],
+    "lifestyle": ["Gentle yoga", "Swimming", "Maintain healthy weight", "Avoid excessive strain"],
+    "prevention": ["Regular exercise", "Maintain healthy weight", "Proper posture", "Adequate rest"]
+  },
+  {
+    "id": 10,
+    "name": "Back Pain",
+    "category": "Joint & Muscle",
+    "symptoms": ["back pain", "lower back pain", "backache", "spinal pain", "back stiffness"],
+    "herbs": ["Ashwagandha", "Guggul", "Shallaki", "Ginger", "Nirgundi"],
+    "remedies": ["Warm oil massage", "Hot compress", "Ginger paste application", "Epsom salt bath"],
+    "diet": ["Anti-inflammatory foods", "Calcium-rich foods", "Vitamin D foods", "Stay hydrated"],
+    "lifestyle": ["Practice yoga (Cat-Cow, Child's pose)", "Maintain proper posture", "Avoid heavy lifting", "Strengthen core muscles"],
+    "prevention": ["Regular exercise", "Proper lifting techniques", "Good posture", "Ergonomic workspace"]
+  },
+  {
+    "id": 11,
+    "name": "Diabetes",
+    "category": "Metabolic",
+    "symptoms": ["diabetes", "high blood sugar", "frequent urination", "increased thirst", "fatigue", "sugar"],
+    "herbs": ["Gymnema (Gurmar)", "Fenugreek", "Bitter Gourd", "Turmeric", "Cinnamon"],
+    "remedies": ["Fenugreek water on empty stomach", "Bitter gourd juice", "Gymnema tea", "Cinnamon powder with meals"],
+    "diet": ["Low glycemic foods", "Whole grains", "Vegetables", "Avoid refined sugar and carbs"],
+    "lifestyle": ["Regular exercise", "Monitor blood sugar", "Stress management", "Adequate sleep"],
+    "prevention": ["Maintain healthy weight", "Regular physical activity", "Balanced diet", "Regular check-ups"]
+  },
+  {
+    "id": 12,
+    "name": "High Blood Pressure",
+    "category": "Cardiovascular",
+    "symptoms": ["high blood pressure", "hypertension", "elevated bp", "blood pressure", "bp"],
+    "herbs": ["Arjuna", "Ashwagandha", "Garlic", "Gotu Kola", "Brahmi"],
+    "remedies": ["Arjuna bark decoction", "Garlic with water on empty stomach", "Hibiscus tea", "Ashwagandha supplement"],
+    "diet": ["Low sodium diet", "DASH diet", "Potassium-rich foods", "Avoid processed foods"],
+    "lifestyle": ["Regular exercise", "Meditation", "Reduce salt intake", "Manage stress"],
+    "prevention": ["Maintain healthy weight", "Regular exercise", "Limit alcohol", "Manage stress"]
+  },
+  {
+    "id": 13,
+    "name": "Skin Acne",
+    "category": "Skin",
+    "symptoms": ["acne", "pimples", "breakout", "blemishes", "spots on face", "oily skin"],
+    "herbs": ["Neem", "Turmeric", "Sandalwood", "Aloe Vera", "Tea Tree"],
+    "remedies": ["Neem face pack", "Turmeric-honey mask", "Aloe vera gel application", "Rose water toner"],
+    "diet": ["Fresh fruits and vegetables", "Plenty of water", "Avoid oily and processed foods", "Zinc-rich foods"],
+    "lifestyle": ["Clean face twice daily", "Avoid touching face", "Change pillowcases regularly", "Manage stress"],
+    "prevention": ["Maintain skin hygiene", "Balanced diet", "Adequate water intake", "Avoid comedogenic products"]
+  },
+  {
+    "id": 14,
+    "name": "Eczema",
+    "category": "Skin",
+    "symptoms": ["eczema", "dry skin", "itchy skin", "rash", "skin inflammation", "red skin"],
+    "herbs": ["Neem", "Turmeric", "Coconut Oil", "Aloe Vera", "Sandalwood"],
+    "remedies": ["Coconut oil moisturizer", "Neem paste application", "Turmeric paste", "Oatmeal bath"],
+    "diet": ["Anti-inflammatory foods", "Omega-3 rich foods", "Avoid allergenic foods", "Stay hydrated"],
+    "lifestyle": ["Avoid harsh soaps", "Use gentle moisturizers", "Avoid scratching", "Wear soft cotton clothes"],
+    "prevention": ["Identify triggers", "Keep skin moisturized", "Avoid irritants", "Manage stress"]
+  },
+  {
+    "id": 15,
+    "name": "Hair Loss",
+    "category": "Skin",
+    "symptoms": ["hair loss", "hair fall", "baldness", "thinning hair", "receding hairline"],
+    "herbs": ["Bhringraj", "Amla", "Brahmi", "Fenugreek", "Hibiscus"],
+    "remedies": ["Bhringraj oil massage", "Amla-coconut oil treatment", "Fenugreek seed paste", "Onion juice application"],
+    "diet": ["Protein-rich foods", "Iron-rich foods", "Biotin foods", "Vitamins A, C, E"],
+    "lifestyle": ["Regular scalp massage", "Avoid heat styling", "Reduce stress", "Adequate sleep"],
+    "prevention": ["Balanced diet", "Proper hair care", "Avoid harsh chemicals", "Manage stress"]
+  },
+  {
+    "id": 16,
+    "name": "Dandruff",
+    "category": "Skin",
+    "symptoms": ["dandruff", "flaky scalp", "itchy scalp", "scalp irritation", "white flakes"],
+    "herbs": ["Neem", "Tea Tree", "Fenugreek", "Lemon", "Aloe Vera"],
+    "remedies": ["Neem water rinse", "Tea tree oil shampoo", "Fenugreek paste", "Lemon juice application"],
+    "diet": ["Omega-3 rich foods", "Vitamin B foods", "Zinc-rich foods", "Stay hydrated"],
+    "lifestyle": ["Regular hair washing", "Avoid oily hair products", "Manage stress", "Use mild shampoo"],
+    "prevention": ["Regular hair hygiene", "Avoid harsh products", "Balanced diet", "Stress management"]
+  },
+  {
+    "id": 17,
+    "name": "Asthma",
+    "category": "Respiratory",
+    "symptoms": ["asthma", "wheezing", "shortness of breath", "difficulty breathing", "chest tightness", "breathlessness"],
+    "herbs": ["Vasaka", "Licorice", "Turmeric", "Ginger", "Pippali"],
+    "remedies": ["Ginger-honey tea", "Turmeric milk", "Steam inhalation", "Licorice root tea"],
+    "diet": ["Anti-inflammatory foods", "Avoid cold foods", "Warm soups", "Avoid dairy during attacks"],
+    "lifestyle": ["Practice Pranayama", "Avoid triggers", "Keep environment clean", "Regular breathing exercises"],
+    "prevention": ["Identify and avoid triggers", "Practice breathing exercises", "Maintain healthy weight", "Boost immunity"]
+  },
+  {
+    "id": 18,
+    "name": "Bronchitis",
+    "category": "Respiratory",
+    "symptoms": ["bronchitis", "persistent cough", "chest congestion", "phlegm", "mucus cough"],
+    "herbs": ["Vasaka", "Tulsi", "Ginger", "Turmeric", "Licorice"],
+    "remedies": ["Tulsi-ginger tea", "Honey-pepper mixture", "Steam inhalation", "Turmeric milk"],
+    "diet": ["Warm fluids", "Avoid cold drinks", "Garlic and onion", "Citrus fruits"],
+    "lifestyle": ["Rest adequately", "Stay hydrated", "Avoid smoking and pollutants", "Practice deep breathing"],
+    "prevention": ["Boost immunity", "Avoid cold weather exposure", "Practice good hygiene", "Avoid smoking"]
+  },
+  {
+    "id": 19,
+    "name": "Allergic Rhinitis",
+    "category": "Respiratory",
+    "symptoms": ["allergic rhinitis", "hay fever", "seasonal allergies", "sneezing", "itchy nose", "watery eyes"],
+    "herbs": ["Turmeric", "Ginger", "Neem", "Haridra", "Pippali"],
+    "remedies": ["Turmeric milk", "Nasal irrigation with saline", "Ginger tea", "Steam inhalation"],
+    "diet": ["Anti-inflammatory foods", "Local honey", "Avoid dairy during symptoms", "Citrus fruits"],
+    "lifestyle": ["Keep environment clean", "Use air purifiers", "Practice Jal Neti", "Avoid triggers"],
+    "prevention": ["Boost immunity", "Identify allergens", "Keep home clean", "Pranayama practice"]
+  },
+  {
+    "id": 20,
+    "name": "Sore Throat",
+    "category": "Respiratory",
+    "symptoms": ["sore throat", "throat pain", "difficulty swallowing", "scratchy throat", "painful throat"],
+    "herbs": ["Licorice", "Tulsi", "Ginger", "Turmeric", "Honey"],
+    "remedies": ["Warm salt water gargle", "Tulsi-honey tea", "Turmeric-milk", "Licorice root tea"],
+    "diet": ["Warm liquids", "Honey", "Soft foods", "Avoid cold drinks"],
+    "lifestyle": ["Rest voice", "Stay hydrated", "Use humidifier", "Avoid irritants"],
+    "prevention": ["Good hygiene", "Boost immunity", "Stay hydrated", "Avoid cold exposure"]
+  },
+  {
+    "id": 21,
+    "name": "Obesity",
+    "category": "Metabolic",
+    "symptoms": ["obesity", "overweight", "excess weight", "weight gain", "heavy"],
+    "herbs": ["Triphala", "Guggul", "Garcinia", "Ginger", "Green Tea"],
+    "remedies": ["Triphala powder with warm water", "Honey-lemon water morning", "Green tea", "Ginger tea"],
+    "diet": ["Low-calorie balanced diet", "High fiber foods", "Vegetables and fruits", "Avoid processed foods"],
+    "lifestyle": ["Regular exercise", "Portion control", "Adequate sleep", "Stress management"],
+    "prevention": ["Balanced diet", "Regular physical activity", "Mindful eating", "Adequate sleep"]
+  },
+  {
+    "id": 22,
+    "name": "Anemia",
+    "category": "Blood Disorders",
+    "symptoms": ["anemia", "fatigue", "weakness", "pale skin", "dizziness", "low hemoglobin"],
+    "herbs": ["Ashwagandha", "Shatavari", "Punarnava", "Beetroot", "Amla"],
+    "remedies": ["Beetroot juice", "Amla juice", "Iron-rich herb supplements", "Blackstrap molasses"],
+    "diet": ["Iron-rich foods", "Vitamin C foods", "Leafy greens", "Dates and raisins"],
+    "lifestyle": ["Adequate rest", "Regular exercise", "Stress management", "Sunlight exposure"],
+    "prevention": ["Iron-rich diet", "Regular check-ups", "Proper nutrition", "Avoid tea with meals"]
+  },
+  {
+    "id": 23,
+    "name": "Liver Problems",
+    "category": "Digestive",
+    "symptoms": ["liver", "jaundice", "fatty liver", "liver pain", "yellow skin", "liver inflammation"],
+    "herbs": ["Kutki", "Bhumyamalaki", "Punarnava", "Turmeric", "Milk Thistle"],
+    "remedies": ["Kutki powder with honey", "Amla juice", "Turmeric water", "Papaya leaf juice"],
+    "diet": ["Light easily digestible foods", "Avoid alcohol", "Bitter vegetables", "Adequate water"],
+    "lifestyle": ["Avoid alcohol and smoking", "Regular exercise", "Adequate sleep", "Stress reduction"],
+    "prevention": ["Healthy diet", "Avoid alcohol", "Maintain healthy weight", "Regular check-ups"]
+  },
+  {
+    "id": 24,
+    "name": "Kidney Stones",
+    "category": "Urinary",
+    "symptoms": ["kidney stones", "kidney pain", "painful urination", "blood in urine", "flank pain"],
+    "herbs": ["Punarnava", "Gokshura", "Varuna", "Pashanabheda", "Coriander"],
+    "remedies": ["Lemon water", "Coconut water", "Basil juice", "Pomegranate juice"],
+    "diet": ["Plenty of water", "Citrus fruits", "Low sodium", "Avoid oxalate-rich foods"],
+    "lifestyle": ["Drink 8-10 glasses water daily", "Regular exercise", "Avoid dehydration", "Monitor diet"],
+    "prevention": ["Adequate hydration", "Balanced diet", "Limit sodium", "Maintain healthy weight"]
+  },
+  {
+    "id": 25,
+    "name": "Urinary Tract Infection",
+    "category": "Urinary",
+    "symptoms": ["uti", "urinary infection", "burning urination", "frequent urination", "bladder infection"],
+    "herbs": ["Gokshura", "Punarnava", "Coriander", "Cranberry", "Cinnamon"],
+    "remedies": ["Cranberry juice", "Coconut water", "Coriander water", "Barley water"],
+    "diet": ["Plenty of fluids", "Cranberry products", "Vitamin C foods", "Avoid caffeine"],
+    "lifestyle": ["Good hygiene", "Don't hold urine", "Urinate after intercourse", "Wear cotton underwear"],
+    "prevention": ["Adequate hydration", "Proper hygiene", "Cranberry consumption", "Avoid irritants"]
+  },
+  {
+    "id": 26,
+    "name": "Depression",
+    "category": "Mental Health",
+    "symptoms": ["depression", "sadness", "low mood", "hopelessness", "lack of interest", "depressed"],
+    "herbs": ["Ashwagandha", "Brahmi", "Jatamansi", "St. John's Wort", "Saffron"],
+    "remedies": ["Ashwagandha with milk", "Brahmi tea", "Saffron milk", "Meditation practice"],
+    "diet": ["Omega-3 rich foods", "Complex carbohydrates", "Protein-rich foods", "Avoid alcohol and caffeine"],
+    "lifestyle": ["Regular exercise", "Meditation and yoga", "Social connections", "Adequate sunlight"],
+    "prevention": ["Regular physical activity", "Strong social support", "Stress management", "Adequate sleep"]
+  },
+  {
+    "id": 27,
+    "name": "Memory Loss",
+    "category": "Mental Health",
+    "symptoms": ["memory loss", "forgetfulness", "poor memory", "brain fog", "confusion", "cognitive decline"],
+    "herbs": ["Brahmi", "Shankhpushpi", "Ashwagandha", "Gotu Kola", "Ginkgo"],
+    "remedies": ["Brahmi ghee", "Shankhpushpi syrup", "Almond-milk shake", "Walnut consumption"],
+    "diet": ["Brain foods (nuts, seeds)", "Omega-3 foods", "Antioxidant-rich foods", "Adequate water"],
+    "lifestyle": ["Mental exercises", "Adequate sleep", "Meditation", "Regular reading"],
+    "prevention": ["Mental stimulation", "Physical exercise", "Social engagement", "Healthy diet"]
+  },
+  {
+    "id": 28,
+    "name": "Thyroid Disorders",
+    "category": "Endocrine",
+    "symptoms": ["thyroid", "hypothyroid", "hyperthyroid", "thyroid imbalance", "weight changes", "fatigue"],
+    "herbs": ["Ashwagandha", "Guggul", "Brahmi", "Kanchanar", "Shilajit"],
+    "remedies": ["Ashwagandha supplement", "Coconut oil", "Ginger tea", "Seaweed consumption"],
+    "diet": ["Iodine-rich foods", "Selenium foods", "Avoid goitrogens if hypothyroid", "Balanced diet"],
+    "lifestyle": ["Regular exercise", "Stress management", "Adequate sleep", "Yoga practice"],
+    "prevention": ["Balanced diet", "Stress reduction", "Regular check-ups", "Avoid excessive soy"]
+  },
+  {
+    "id": 29,
+    "name": "PCOS",
+    "category": "Women's Health",
+    "symptoms": ["pcos", "irregular periods", "hormonal imbalance", "ovarian cysts", "hirsutism"],
+    "herbs": ["Shatavari", "Ashwagandha", "Cinnamon", "Fenugreek", "Spearmint"],
+    "remedies": ["Shatavari powder with milk", "Cinnamon tea", "Fenugreek water", "Spearmint tea"],
+    "diet": ["Low glycemic foods", "Anti-inflammatory foods", "High fiber", "Avoid processed foods"],
+    "lifestyle": ["Regular exercise", "Weight management", "Stress reduction", "Adequate sleep"],
+    "prevention": ["Maintain healthy weight", "Regular exercise", "Balanced diet", "Stress management"]
+  },
+  {
+    "id": 30,
+    "name": "Menstrual Cramps",
+    "category": "Women's Health",
+    "symptoms": ["menstrual cramps", "period pain", "dysmenorrhea", "painful periods", "pelvic pain"],
+    "herbs": ["Shatavari", "Ashoka", "Ginger", "Cinnamon", "Fennel"],
+    "remedies": ["Ginger tea", "Hot compress", "Fennel tea", "Ashoka bark decoction"],
+    "diet": ["Iron-rich foods", "Anti-inflammatory foods", "Warm liquids", "Avoid caffeine"],
+    "lifestyle": ["Gentle yoga", "Heat therapy", "Adequate rest", "Stress management"],
+    "prevention": ["Regular exercise", "Balanced diet", "Stress reduction", "Adequate sleep"]
+  },
+  {
+    "id": 31,
+    "name": "Menopause Symptoms",
+    "category": "Women's Health",
+    "symptoms": ["menopause", "hot flashes", "night sweats", "mood swings", "hormonal changes"],
+    "herbs": ["Shatavari", "Ashwagandha", "Black Cohosh", "Red Clover", "Licorice"],
+    "remedies": ["Shatavari milk", "Ashwagandha supplement", "Flaxseed consumption", "Herbal teas"],
+    "diet": ["Phytoestrogen foods", "Calcium-rich foods", "Vitamin D foods", "Avoid spicy foods"],
+    "lifestyle": ["Regular exercise", "Stress management", "Adequate sleep", "Stay cool"],
+    "prevention": ["Healthy lifestyle", "Regular check-ups", "Calcium supplementation", "Exercise"]
+  },
+  {
+    "id": 32,
+    "name": "Male Infertility",
+    "category": "Men's Health",
+    "symptoms": ["infertility", "low sperm count", "erectile dysfunction", "low libido", "reproductive issues"],
+    "herbs": ["Ashwagandha", "Shilajit", "Gokshura", "Safed Musli", "Kaunch Beej"],
+    "remedies": ["Ashwagandha with milk", "Shilajit supplement", "Gokshura powder", "Date-milk shake"],
+    "diet": ["Zinc-rich foods", "Antioxidant foods", "Healthy fats", "Avoid alcohol"],
+    "lifestyle": ["Regular exercise", "Stress reduction", "Adequate sleep", "Avoid smoking"],
+    "prevention": ["Healthy lifestyle", "Balanced diet", "Stress management", "Regular exercise"]
+  },
+  {
+    "id": 33,
+    "name": "Prostate Problems",
+    "category": "Men's Health",
+    "symptoms": ["prostate", "enlarged prostate", "urinary problems", "bph", "prostate pain"],
+    "herbs": ["Gokshura", "Varuna", "Shilajit", "Saw Palmetto", "Pumpkin Seeds"],
+    "remedies": ["Gokshura tea", "Pumpkin seed consumption", "Tomato juice", "Green tea"],
+    "diet": ["Tomatoes", "Omega-3 foods", "Green tea", "Avoid spicy foods"],
+    "lifestyle": ["Regular exercise", "Healthy weight", "Limit fluids before bed", "Regular check-ups"],
+    "prevention": ["Healthy diet", "Regular exercise", "Maintain healthy weight", "Regular screening"]
+  },
+  {
+    "id": 34,
+    "name": "Erectile Dysfunction",
+    "category": "Men's Health",
+    "symptoms": ["erectile dysfunction", "ed", "impotence", "sexual dysfunction", "weak erection"],
+    "herbs": ["Ashwagandha", "Shilajit", "Gokshura", "Safed Musli", "Kaunch Beej"],
+    "remedies": ["Ashwagandha-Shilajit combination", "Gokshura powder", "Garlic consumption", "Ginger tea"],
+    "diet": ["Nitrate-rich foods", "L-arginine foods", "Zinc foods", "Avoid alcohol"],
+    "lifestyle": ["Regular exercise", "Stress management", "Quit smoking", "Adequate sleep"],
+    "prevention": ["Healthy lifestyle", "Exercise regularly", "Manage stress", "Avoid substance abuse"]
+  },
+  {
+    "id": 35,
+    "name": "Psoriasis",
+    "category": "Skin",
+    "symptoms": ["psoriasis", "scaly skin", "red patches", "skin plaques", "itchy patches"],
+    "herbs": ["Neem", "Turmeric", "Aloe Vera", "Guggul", "Manjistha"],
+    "remedies": ["Neem paste application", "Turmeric paste", "Aloe vera gel", "Coconut oil massage"],
+    "diet": ["Anti-inflammatory diet", "Omega-3 foods", "Avoid triggers", "Stay hydrated"],
+    "lifestyle": ["Moisturize regularly", "Avoid scratching", "Manage stress", "Sunlight exposure (moderate)"],
+    "prevention": ["Identify triggers", "Manage stress", "Moisturize skin", "Healthy diet"]
+  },
+  {
+    "id": 36,
+    "name": "Vitiligo",
+    "category": "Skin",
+    "symptoms": ["vitiligo", "white patches", "depigmentation", "loss of skin color", "patches"],
+    "herbs": ["Bakuchi", "Turmeric", "Neem", "Ginger", "Radish Seeds"],
+    "remedies": ["Bakuchi oil application", "Turmeric-mustard oil paste", "Ginger juice", "Copper water"],
+    "diet": ["Copper-rich foods", "Vitamin B12 foods", "Avoid vitamin C excess", "Balanced diet"],
+    "lifestyle": ["Moderate sun exposure", "Stress management", "Avoid skin trauma", "Use sunscreen"],
+    "prevention": ["Sun protection", "Stress management", "Avoid skin injuries", "Balanced diet"]
+  },
+  {
+    "id": 37,
+    "name": "Wrinkles and Aging",
+    "category": "Skin",
+    "symptoms": ["wrinkles", "aging skin", "fine lines", "sagging skin", "age spots"],
+    "herbs": ["Aloe Vera", "Sandalwood", "Turmeric", "Rose", "Amla"],
+    "remedies": ["Aloe vera gel", "Sandalwood paste", "Rose water", "Amla juice"],
+    "diet": ["Antioxidant-rich foods", "Vitamin C foods", "Healthy fats", "Adequate water"],
+    "lifestyle": ["Sun protection", "Adequate sleep", "Face massage", "Avoid smoking"],
+    "prevention": ["Sun protection", "Healthy diet", "Adequate hydration", "Stress management"]
+  },
+  {
+    "id": 38,
+    "name": "Weak Immunity",
+    "category": "Immunity",
+    "symptoms": ["weak immunity", "frequent infections", "low immunity", "getting sick often", "susceptible"],
+    "herbs": ["Ashwagandha", "Tulsi", "Amla", "Giloy", "Turmeric"],
+    "remedies": ["Chyawanprash", "Tulsi tea", "Amla juice", "Giloy juice"],
+    "diet": ["Vitamin C foods", "Protein-rich foods", "Probiotics", "Balanced diet"],
+    "lifestyle": ["Adequate sleep", "Regular exercise", "Stress management", "Good hygiene"],
+    "prevention": ["Balanced diet", "Regular exercise", "Adequate sleep", "Stress reduction"]
+  },
+  {
+    "id": 39,
+    "name": "Fever",
+    "category": "General",
+    "symptoms": ["fever", "high temperature", "body heat", "temperature", "pyrexia"],
+    "herbs": ["Tulsi", "Ginger", "Coriander", "Black Pepper", "Neem"],
+    "remedies": ["Tulsi decoction", "Ginger tea", "Coriander water", "Cold compress"],
+    "diet": ["Light easily digestible food", "Plenty of fluids", "Warm soups", "Avoid heavy foods"],
+    "lifestyle": ["Adequate rest", "Stay hydrated", "Sponge bath", "Monitor temperature"],
+    "prevention": ["Boost immunity", "Good hygiene", "Avoid infections", "Adequate rest"]
+  },
+  {
+    "id": 40,
+    "name": "Body Weakness",
+    "category": "General",
+    "symptoms": ["weakness", "fatigue", "tiredness", "lack of energy", "exhaustion", "lethargy"],
+    "herbs": ["Ashwagandha", "Shatavari", "Ginseng", "Shilajit", "Bala"],
+    "remedies": ["Ashwagandha milk", "Shilajit supplement", "Almond-date shake", "Energy tonic"],
+    "diet": ["Protein-rich foods", "Complex carbohydrates", "Iron-rich foods", "Adequate calories"],
+    "lifestyle": ["Adequate sleep", "Regular exercise", "Stress management", "Rest periods"],
+    "prevention": ["Balanced diet", "Regular exercise", "Adequate sleep", "Stress reduction"]
+  },
+  {
+    "id": 41,
+    "name": "Eye Strain",
+    "category": "Eye Health",
+    "symptoms": ["eye strain", "tired eyes", "eye fatigue", "dry eyes", "eye discomfort"],
+    "herbs": ["Triphala", "Rose Water", "Fennel", "Amla", "Licorice"],
+    "remedies": ["Triphala eye wash", "Rose water eye drops", "Cold compress", "Fennel tea"],
+    "diet": ["Vitamin A foods", "Omega-3 foods", "Colorful vegetables", "Adequate water"],
+    "lifestyle": ["20-20-20 rule", "Proper lighting", "Blink frequently", "Reduce screen time"],
+    "prevention": ["Regular breaks", "Proper ergonomics", "Adequate lighting", "Eye exercises"]
+  },
+  {
+    "id": 42,
+    "name": "Cataract",
+    "category": "Eye Health",
+    "symptoms": ["cataract", "blurry vision", "cloudy vision", "vision problems", "glare sensitivity"],
+    "herbs": ["Triphala", "Amla", "Gotu Kola", "Bilberry", "Turmeric"],
+    "remedies": ["Triphala water", "Amla juice", "Carrot juice", "Eye exercises"],
+    "diet": ["Antioxidant-rich foods", "Vitamin C foods", "Carotenoid foods", "Colorful vegetables"],
+    "lifestyle": ["Protect from UV", "Regular eye check-ups", "Quit smoking", "Manage diabetes"],
+    "prevention": ["UV protection", "Antioxidant diet", "Avoid smoking", "Manage health conditions"]
+  },
+  {
+    "id": 43,
+    "name": "Vertigo",
+    "category": "Neurological",
+    "symptoms": ["vertigo", "dizziness", "spinning sensation", "balance problems", "light headed"],
+    "herbs": ["Brahmi", "Ginger", "Ginkgo", "Black Pepper", "Coriander"],
+    "remedies": ["Ginger tea", "Brahmi powder", "Coriander water", "Vitamin D supplementation"],
+    "diet": ["Ginger", "Stay hydrated", "Avoid caffeine", "Balanced meals"],
+    "lifestyle": ["Move slowly", "Adequate rest", "Stress management", "Balance exercises"],
+    "prevention": ["Stay hydrated", "Manage stress", "Regular sleep", "Avoid sudden movements"]
+  },
+  {
+    "id": 44,
+    "name": "Neuropathy",
+    "category": "Neurological",
+    "symptoms": ["neuropathy", "numbness", "tingling", "nerve pain", "pins and needles"],
+    "herbs": ["Ashwagandha", "Turmeric", "Ginger", "Bala", "Nirgundi"],
+    "remedies": ["Ashwagandha supplement", "Turmeric milk", "Warm oil massage", "B-vitamin supplementation"],
+    "diet": ["B-vitamin foods", "Magnesium foods", "Anti-inflammatory foods", "Avoid alcohol"],
+    "lifestyle": ["Regular exercise", "Foot care", "Manage blood sugar", "Quit smoking"],
+    "prevention": ["Manage diabetes", "Balanced diet", "Regular exercise", "Avoid alcohol excess"]
+  },
+  {
+    "id": 45,
+    "name": "Osteoporosis",
+    "category": "Bone Health",
+    "symptoms": ["osteoporosis", "weak bones", "bone pain", "fractures", "bone density loss"],
+    "herbs": ["Ashwagandha", "Shatavari", "Guggul", "Arjuna", "Laksha"],
+    "remedies": ["Calcium supplements", "Ashwagandha-ghee", "Sesame seed consumption", "Vitamin D"],
+    "diet": ["Calcium-rich foods", "Vitamin D foods", "Protein foods", "Avoid excessive salt"],
+    "lifestyle": ["Weight-bearing exercise", "Sunlight exposure", "Avoid smoking and alcohol", "Balance exercises"],
+    "prevention": ["Adequate calcium and vitamin D", "Regular exercise", "Healthy lifestyle", "Bone density screening"]
+  },
+  {
+    "id": 46,
+    "name": "Gout",
+    "category": "Joint & Muscle",
+    "symptoms": ["gout", "joint inflammation", "big toe pain", "uric acid", "swollen joints"],
+    "herbs": ["Giloy", "Punarnava", "Gokshura", "Triphala", "Nirgundi"],
+    "remedies": ["Giloy juice", "Cherry juice", "Lemon water", "Cold compress"],
+    "diet": ["Low purine foods", "Plenty of water", "Cherry consumption", "Avoid organ meats and alcohol"],
+    "lifestyle": ["Maintain healthy weight", "Stay hydrated", "Regular exercise", "Avoid alcohol"],
+    "prevention": ["Low purine diet", "Adequate hydration", "Maintain healthy weight", "Limit alcohol"]
+  },
+  {
+    "id": 47,
+    "name": "Muscle Cramps",
+    "category": "Joint & Muscle",
+    "symptoms": ["muscle cramps", "muscle spasms", "charley horse", "leg cramps", "muscle pain"],
+    "herbs": ["Ashwagandha", "Ginger", "Turmeric", "Black Pepper", "Brahmi"],
+    "remedies": ["Magnesium supplementation", "Warm compress", "Massage with oil", "Stretching"],
+    "diet": ["Magnesium-rich foods", "Potassium foods", "Adequate hydration", "Electrolyte balance"],
+    "lifestyle": ["Regular stretching", "Proper hydration", "Adequate rest", "Warm-up before exercise"],
+    "prevention": ["Stay hydrated", "Balanced electrolytes", "Regular stretching", "Adequate minerals"]
+  },
+  {
+    "id": 48,
+    "name": "Varicose Veins",
+    "category": "Circulatory",
+    "symptoms": ["varicose veins", "swollen veins", "leg heaviness", "visible veins", "leg pain"],
+    "herbs": ["Ashwagandha", "Gotu Kola", "Horse Chestnut", "Guggul", "Manjistha"],
+    "remedies": ["Horse chestnut extract", "Gotu kola tea", "Cold compress", "Leg elevation"],
+    "diet": ["Fiber-rich foods", "Flavonoid foods", "Anti-inflammatory foods", "Avoid salt excess"],
+    "lifestyle": ["Elevate legs", "Regular exercise", "Avoid prolonged standing", "Compression stockings"],
+    "prevention": ["Regular exercise", "Maintain healthy weight", "Avoid prolonged standing", "Elevate legs"]
+  },
+  {
+    "id": 49,
+    "name": "Piles (Hemorrhoids)",
+    "category": "Digestive",
+    "symptoms": ["piles", "hemorrhoids", "rectal bleeding", "anal pain", "swelling near anus"],
+    "herbs": ["Triphala", "Haritaki", "Neem", "Aloe Vera", "Turmeric"],
+    "remedies": ["Triphala powder", "Aloe vera juice", "Sitz bath", "Coconut oil application"],
+    "diet": ["High fiber foods", "Plenty of water", "Fruits and vegetables", "Avoid spicy foods"],
+    "lifestyle": ["Avoid straining", "Regular exercise", "Don't sit too long", "Maintain hygiene"],
+    "prevention": ["High fiber diet", "Adequate water", "Regular exercise", "Avoid straining"]
+  },
+  {
+    "id": 50,
+    "name": "Irritable Bowel Syndrome",
+    "category": "Digestive",
+    "symptoms": ["ibs", "abdominal pain", "bloating", "irregular bowel", "cramping", "bowel discomfort"],
+    "herbs": ["Peppermint", "Ginger", "Fennel", "Ajwain", "Triphala"],
+    "remedies": ["Peppermint tea", "Ginger tea", "Fennel water", "Probiotic foods"],
+    "diet": ["Low FODMAP diet", "Fiber foods", "Probiotic foods", "Avoid trigger foods"],
+    "lifestyle": ["Stress management", "Regular meals", "Exercise", "Adequate sleep"],
+    "prevention": ["Identify triggers", "Manage stress", "Regular routine", "Balanced diet"]
+  },
+  {
+    "id": 51,
+    "name": "Gastritis",
+    "category": "Digestive",
+    "symptoms": ["gastritis", "stomach inflammation", "stomach pain", "nausea", "burning stomach"],
+    "herbs": ["Licorice", "Amla", "Aloe Vera", "Fennel", "Coriander"],
+    "remedies": ["Licorice tea", "Aloe vera juice", "Coconut water", "Fennel tea"],
+    "diet": ["Bland foods", "Small frequent meals", "Avoid spicy and acidic foods", "Avoid alcohol"],
+    "lifestyle": ["Eat slowly", "Avoid NSAIDs", "Stress management", "Avoid smoking"],
+    "prevention": ["Healthy diet", "Avoid irritants", "Manage stress", "Regular meals"]
+  },
+  {
+    "id": 52,
+    "name": "Peptic Ulcer",
+    "category": "Digestive",
+    "symptoms": ["ulcer", "stomach ulcer", "burning pain", "peptic ulcer", "abdominal pain"],
+    "herbs": ["Licorice", "Cabbage", "Aloe Vera", "Turmeric", "Slippery Elm"],
+    "remedies": ["Cabbage juice", "Licorice root tea", "Aloe vera juice", "Turmeric milk"],
+    "diet": ["Bland diet", "Probiotic foods", "Avoid spicy foods", "Small frequent meals"],
+    "lifestyle": ["Avoid NSAIDs", "Quit smoking", "Stress management", "Avoid alcohol"],
+    "prevention": ["Avoid irritants", "Manage stress", "Healthy diet", "Good hygiene"]
+  },
+  {
+    "id": 53,
+    "name": "Cholesterol",
+    "category": "Cardiovascular",
+    "symptoms": ["high cholesterol", "cholesterol", "elevated lipids", "ldl", "triglycerides"],
+    "herbs": ["Arjuna", "Guggul", "Garlic", "Fenugreek", "Amla"],
+    "remedies": ["Arjuna bark powder", "Garlic consumption", "Fenugreek water", "Amla juice"],
+    "diet": ["Heart-healthy fats", "Fiber-rich foods", "Avoid trans fats", "Oats and nuts"],
+    "lifestyle": ["Regular exercise", "Maintain healthy weight", "Quit smoking", "Limit alcohol"],
+    "prevention": ["Healthy diet", "Regular exercise", "Maintain healthy weight", "Avoid smoking"]
+  },
+  {
+    "id": 54,
+    "name": "Heart Palpitations",
+    "category": "Cardiovascular",
+    "symptoms": ["palpitations", "irregular heartbeat", "heart racing", "arrhythmia", "fast heartbeat"],
+    "herbs": ["Arjuna", "Ashwagandha", "Brahmi", "Hawthorn", "Passionflower"],
+    "remedies": ["Arjuna tea", "Ashwagandha supplement", "Magnesium supplementation", "Deep breathing"],
+    "diet": ["Magnesium-rich foods", "Potassium foods", "Avoid caffeine", "Adequate hydration"],
+    "lifestyle": ["Stress management", "Adequate sleep", "Avoid stimulants", "Regular exercise"],
+    "prevention": ["Manage stress", "Avoid triggers", "Balanced diet", "Regular check-ups"]
+  },
+  {
+    "id": 55,
+    "name": "Chronic Fatigue",
+    "category": "General",
+    "symptoms": ["chronic fatigue", "persistent tiredness", "exhaustion", "low energy", "cfs"],
+    "herbs": ["Ashwagandha", "Rhodiola", "Ginseng", "Shilajit", "Licorice"],
+    "remedies": ["Ashwagandha supplement", "Shilajit resin", "B-vitamin complex", "CoQ10"],
+    "diet": ["Balanced nutrient-rich diet", "Complex carbs", "Protein foods", "Avoid sugar"],
+    "lifestyle": ["Paced activity", "Adequate rest", "Stress management", "Sleep hygiene"],
+    "prevention": ["Balanced lifestyle", "Stress management", "Regular routine", "Healthy diet"]
+  },
+  {
+    "id": 56,
+    "name": "Sinusitis",
+    "category": "Respiratory",
+    "symptoms": ["sinusitis", "sinus infection", "facial pain", "nasal congestion", "sinus pressure"],
+    "herbs": ["Tulsi", "Ginger", "Turmeric", "Eucalyptus", "Peppermint"],
+    "remedies": ["Steam inhalation", "Saline nasal irrigation", "Ginger tea", "Turmeric milk"],
+    "diet": ["Anti-inflammatory foods", "Spicy foods (moderate)", "Warm fluids", "Avoid dairy"],
+    "lifestyle": ["Steam inhalation", "Stay hydrated", "Use humidifier", "Adequate rest"],
+    "prevention": ["Boost immunity", "Avoid allergens", "Good hygiene", "Stay hydrated"]
+  },
+  {
+    "id": 57,
+    "name": "Tonsillitis",
+    "category": "Respiratory",
+    "symptoms": ["tonsillitis", "swollen tonsils", "throat infection", "painful swallowing", "throat inflammation"],
+    "herbs": ["Turmeric", "Licorice", "Ginger", "Tulsi", "Honey"],
+    "remedies": ["Turmeric-salt water gargle", "Licorice tea", "Honey-lemon tea", "Tulsi decoction"],
+    "diet": ["Soft foods", "Warm liquids", "Honey", "Avoid cold drinks"],
+    "lifestyle": ["Adequate rest", "Stay hydrated", "Use humidifier", "Avoid irritants"],
+    "prevention": ["Good hygiene", "Boost immunity", "Avoid infected persons", "Stay hydrated"]
+  },
+  {
+    "id": 58,
+    "name": "Earache",
+    "category": "ENT",
+    "symptoms": ["earache", "ear pain", "ear infection", "hearing problems", "ear discomfort"],
+    "herbs": ["Garlic", "Mullein", "Ginger", "Tulsi", "Neem"],
+    "remedies": ["Warm garlic oil drops", "Warm compress", "Ginger tea", "Steam inhalation"],
+    "diet": ["Anti-inflammatory foods", "Vitamin C foods", "Stay hydrated", "Avoid dairy"],
+    "lifestyle": ["Keep ears dry", "Avoid cotton swabs", "Adequate rest", "Avoid smoking"],
+    "prevention": ["Good hygiene", "Keep ears dry", "Avoid loud noise", "Boost immunity"]
+  },
+  {
+    "id": 59,
+    "name": "Dental Problems",
+    "category": "Oral Health",
+    "symptoms": ["toothache", "dental pain", "gum problems", "tooth decay", "oral pain"],
+    "herbs": ["Clove", "Neem", "Turmeric", "Licorice", "Salt"],
+    "remedies": ["Clove oil application", "Salt water rinse", "Neem stick chewing", "Turmeric paste"],
+    "diet": ["Calcium-rich foods", "Crunchy vegetables", "Avoid sugar", "Adequate water"],
+    "lifestyle": ["Brush twice daily", "Floss regularly", "Regular dental check-ups", "Avoid tobacco"],
+    "prevention": ["Good oral hygiene", "Regular brushing and flossing", "Limit sugar", "Regular dentist visits"]
+  },
+  {
+    "id": 60,
+    "name": "Bad Breath",
+    "category": "Oral Health",
+    "symptoms": ["bad breath", "halitosis", "mouth odor", "unpleasant breath", "foul smell"],
+    "herbs": ["Cardamom", "Fennel", "Mint", "Clove", "Neem"],
+    "remedies": ["Oil pulling", "Mint tea", "Fennel seeds chewing", "Neem water rinse"],
+    "diet": ["Crunchy vegetables", "Plenty of water", "Probiotic foods", "Avoid strong-smelling foods"],
+    "lifestyle": ["Brush twice daily", "Clean tongue", "Stay hydrated", "Regular dental care"],
+    "prevention": ["Good oral hygiene", "Regular dental check-ups", "Stay hydrated", "Avoid tobacco"]
+  },
+  {
+    "id": 61,
+    "name": "Candida Infection",
+    "category": "Fungal",
+    "symptoms": ["candida", "yeast infection", "thrush", "fungal infection", "itching"],
+    "herbs": ["Garlic", "Oregano", "Neem", "Tea Tree", "Coconut Oil"],
+    "remedies": ["Garlic consumption", "Coconut oil application", "Tea tree oil", "Oregano oil"],
+    "diet": ["Low sugar diet", "Probiotic foods", "Garlic and onion", "Avoid refined carbs"],
+    "lifestyle": ["Good hygiene", "Wear breathable clothing", "Avoid moisture", "Boost immunity"],
+    "prevention": ["Balanced diet", "Probiotic consumption", "Good hygiene", "Avoid antibiotics overuse"]
+  },
+  {
+    "id": 62,
+    "name": "Ringworm",
+    "category": "Fungal",
+    "symptoms": ["ringworm", "circular rash", "fungal skin infection", "itchy ring", "red ring"],
+    "herbs": ["Neem", "Turmeric", "Tea Tree", "Garlic", "Aloe Vera"],
+    "remedies": ["Neem paste application", "Turmeric paste", "Tea tree oil", "Garlic paste"],
+    "diet": ["Immune-boosting foods", "Avoid sugar", "Probiotic foods", "Stay hydrated"],
+    "lifestyle": ["Keep area dry", "Good hygiene", "Avoid sharing items", "Wear loose clothes"],
+    "prevention": ["Good hygiene", "Keep skin dry", "Avoid infected items", "Boost immunity"]
+  },
+  {
+    "id": 63,
+    "name": "Athlete's Foot",
+    "category": "Fungal",
+    "symptoms": ["athlete's foot", "foot fungus", "itchy feet", "peeling feet", "foot infection"],
+    "herbs": ["Tea Tree", "Neem", "Garlic", "Turmeric", "Aloe Vera"],
+    "remedies": ["Tea tree oil application", "Neem water soak", "Garlic paste", "Turmeric powder"],
+    "diet": ["Immune-boosting foods", "Probiotic foods", "Avoid sugar", "Stay hydrated"],
+    "lifestyle": ["Keep feet dry", "Change socks daily", "Wear breathable shoes", "Good hygiene"],
+    "prevention": ["Keep feet dry", "Wear sandals in public areas", "Good hygiene", "Breathable footwear"]
+  },
+  {
+    "id": 64,
+    "name": "Warts",
+    "category": "Skin",
+    "symptoms": ["warts", "skin growths", "bumps on skin", "rough skin", "viral warts"],
+    "herbs": ["Garlic", "Tea Tree", "Aloe Vera", "Castor Oil", "Turmeric"],
+    "remedies": ["Garlic paste application", "Tea tree oil", "Castor oil", "Duct tape method"],
+    "diet": ["Immune-boosting foods", "Vitamin C foods", "Zinc foods", "Balanced diet"],
+    "lifestyle": ["Avoid touching warts", "Good hygiene", "Boost immunity", "Avoid walking barefoot"],
+    "prevention": ["Good hygiene", "Boost immunity", "Avoid contact with warts", "Protect feet in public areas"]
+  },
+  {
+    "id": 65,
+    "name": "Cold Sores",
+    "category": "Viral",
+    "symptoms": ["cold sores", "fever blisters", "lip sores", "oral herpes", "mouth blisters"],
+    "herbs": ["Lemon Balm", "Licorice", "Aloe Vera", "Tea Tree", "Echinacea"],
+    "remedies": ["Lemon balm ointment", "Licorice root extract", "Aloe vera gel", "Ice application"],
+    "diet": ["Lysine-rich foods", "Avoid arginine foods", "Immune-boosting foods", "Stay hydrated"],
+    "lifestyle": ["Avoid triggers", "Sun protection", "Stress management", "Good hygiene"],
+    "prevention": ["Boost immunity", "Avoid triggers", "Sun protection", "Manage stress"]
+  },
+  {
+    "id": 66,
+    "name": "Chickenpox",
+    "category": "Viral",
+    "symptoms": ["chickenpox", "itchy rash", "blisters", "fever with rash", "varicella"],
+    "herbs": ["Neem", "Turmeric", "Sandalwood", "Aloe Vera", "Tulsi"],
+    "remedies": ["Neem bath", "Calamine lotion", "Aloe vera gel", "Oatmeal bath"],
+    "diet": ["Light easily digestible food", "Plenty of fluids", "Soft foods", "Immune-boosting foods"],
+    "lifestyle": ["Avoid scratching", "Keep nails short", "Adequate rest", "Isolation"],
+    "prevention": ["Vaccination", "Avoid infected persons", "Boost immunity", "Good hygiene"]
+  },
+  {
+    "id": 67,
+    "name": "Shingles",
+    "category": "Viral",
+    "symptoms": ["shingles", "painful rash", "blisters on one side", "nerve pain", "herpes zoster"],
+    "herbs": ["Licorice", "Turmeric", "Aloe Vera", "St. John's Wort", "Ginger"],
+    "remedies": ["Cool compress", "Aloe vera gel", "Licorice cream", "Oatmeal bath"],
+    "diet": ["Immune-boosting foods", "Anti-inflammatory foods", "Vitamin B12 foods", "Stay hydrated"],
+    "lifestyle": ["Adequate rest", "Avoid stress", "Pain management", "Avoid contact with others"],
+    "prevention": ["Vaccination", "Boost immunity", "Manage stress", "Healthy lifestyle"]
+  },
+  {
+    "id": 68,
+    "name": "Mumps",
+    "category": "Viral",
+    "symptoms": ["mumps", "swollen cheeks", "salivary gland swelling", "jaw pain", "parotitis"],
+    "herbs": ["Turmeric", "Ginger", "Licorice", "Neem", "Tulsi"],
+    "remedies": ["Warm compress", "Turmeric milk", "Ginger tea", "Salt water gargle"],
+    "diet": ["Soft foods", "Plenty of fluids", "Avoid citrus", "Easy to swallow foods"],
+    "lifestyle": ["Adequate rest", "Isolation", "Pain management", "Adequate fluids"],
+    "prevention": ["Vaccination", "Avoid infected persons", "Good hygiene", "Boost immunity"]
+  },
+  {
+    "id": 69,
+    "name": "Motion Sickness",
+    "category": "Neurological",
+    "symptoms": ["motion sickness", "nausea traveling", "car sickness", "sea sickness", "dizziness traveling"],
+    "herbs": ["Ginger", "Peppermint", "Fennel", "Cardamom", "Black Pepper"],
+    "remedies": ["Ginger candy", "Peppermint oil", "Acupressure wristband", "Fresh air"],
+    "diet": ["Light meals before travel", "Ginger tea", "Avoid heavy foods", "Stay hydrated"],
+    "lifestyle": ["Focus on horizon", "Fresh air", "Avoid reading", "Sit in front seat"],
+    "prevention": ["Pre-travel ginger", "Avoid heavy meals", "Choose seat wisely", "Stay hydrated"]
+  },
+  {
+    "id": 70,
+    "name": "Hangover",
+    "category": "General",
+    "symptoms": ["hangover", "headache after alcohol", "nausea after drinking", "alcohol aftereffects", "dehydration"],
+    "herbs": ["Ginger", "Turmeric", "Milk Thistle", "Peppermint", "Lemon"],
+    "remedies": ["Lemon water", "Ginger tea", "Coconut water", "Banana consumption"],
+    "diet": ["Electrolyte-rich fluids", "Light foods", "Fruits", "Avoid caffeine initially"],
+    "lifestyle": ["Hydrate well", "Rest", "Light exercise", "Fresh air"],
+    "prevention": ["Moderate alcohol", "Stay hydrated while drinking", "Eat before drinking", "Avoid mixing drinks"]
+  },
+  {
+    "id": 71,
+    "name": "Food Poisoning",
+    "category": "Digestive",
+    "symptoms": ["food poisoning", "vomiting", "diarrhea after eating", "nausea", "stomach cramps"],
+    "herbs": ["Ginger", "Cumin", "Coriander", "Fenugreek", "Mint"],
+    "remedies": ["Ginger tea", "Cumin water", "Lemon water", "Oral rehydration"],
+    "diet": ["Clear liquids initially", "BRAT diet", "Avoid solid foods initially", "Electrolyte solutions"],
+    "lifestyle": ["Rest", "Stay hydrated", "Avoid solid foods initially", "Monitor symptoms"],
+    "prevention": ["Food hygiene", "Proper cooking", "Safe food storage", "Hand washing"]
+  },
+  {
+    "id": 72,
+    "name": "Jet Lag",
+    "category": "Sleep Disorder",
+    "symptoms": ["jet lag", "sleep disturbance travel", "fatigue after flight", "time zone confusion"],
+    "herbs": ["Ashwagandha", "Valerian", "Chamomile", "Melatonin", "Brahmi"],
+    "remedies": ["Melatonin supplement", "Herbal tea", "Light exposure", "Hydration"],
+    "diet": ["Light meals", "Stay hydrated", "Avoid caffeine and alcohol", "Eat on local schedule"],
+    "lifestyle": ["Adjust sleep schedule", "Light exposure", "Stay active", "Adapt to local time"],
+    "prevention": ["Gradually adjust sleep", "Hydrate during flight", "Avoid alcohol on plane", "Use light therapy"]
+  },
+  {
+    "id": 73,
+    "name": "Premenstrual Syndrome",
+    "category": "Women's Health",
+    "symptoms": ["pms", "premenstrual symptoms", "mood swings before period", "bloating before period", "breast tenderness"],
+    "herbs": ["Shatavari", "Ashwagandha", "Chasteberry", "Evening Primrose", "Ginger"],
+    "remedies": ["Shatavari supplement", "Ginger tea", "Magnesium supplementation", "Herbal teas"],
+    "diet": ["Complex carbs", "Calcium-rich foods", "Magnesium foods", "Avoid caffeine and salt"],
+    "lifestyle": ["Regular exercise", "Stress management", "Adequate sleep", "Relaxation techniques"],
+    "prevention": ["Balanced diet", "Regular exercise", "Stress reduction", "Adequate sleep"]
+  },
+  {
+    "id": 74,
+    "name": "Endometriosis",
+    "category": "Women's Health",
+    "symptoms": ["endometriosis", "pelvic pain", "painful periods severe", "chronic pelvic pain", "painful intercourse"],
+    "herbs": ["Turmeric", "Ginger", "Ashoka", "Shatavari", "Chamomile"],
+    "remedies": ["Turmeric milk", "Ginger tea", "Heat therapy", "Castor oil pack"],
+    "diet": ["Anti-inflammatory diet", "Omega-3 foods", "Avoid red meat", "Plenty of vegetables"],
+    "lifestyle": ["Regular exercise", "Heat therapy", "Stress management", "Adequate rest"],
+    "prevention": ["Healthy diet", "Regular exercise", "Hormone balance", "Stress management"]
+  },
+  {
+    "id": 75,
+    "name": "Urinary Incontinence",
+    "category": "Urinary",
+    "symptoms": ["urinary incontinence", "bladder leakage", "involuntary urination", "weak bladder", "urine leakage"],
+    "herbs": ["Gokshura", "Ashwagandha", "Punarnava", "Horsetail", "Cranberry"],
+    "remedies": ["Kegel exercises", "Bladder training", "Herbal supplements", "Adequate hydration"],
+    "diet": ["Adequate water", "Avoid bladder irritants", "Fiber-rich foods", "Avoid caffeine"],
+    "lifestyle": ["Pelvic floor exercises", "Maintain healthy weight", "Scheduled voiding", "Avoid lifting heavy"],
+    "prevention": ["Pelvic exercises", "Maintain healthy weight", "Avoid constipation", "Manage chronic cough"]
+  },
+  {
+    "id": 76,
+    "name": "Overactive Bladder",
+    "category": "Urinary",
+    "symptoms": ["overactive bladder", "frequent urge to urinate", "urgency", "urge incontinence", "nocturia"],
+    "herbs": ["Gokshura", "Varuna", "Ashwagandha", "Corn Silk", "Cranberry"],
+    "remedies": ["Bladder training", "Pelvic exercises", "Herbal teas", "Scheduled voiding"],
+    "diet": ["Adequate water", "Avoid bladder irritants", "Limit fluids before bed", "Avoid caffeine"],
+    "lifestyle": ["Bladder training", "Pelvic floor exercises", "Double voiding", "Maintain healthy weight"],
+    "prevention": ["Pelvic exercises", "Maintain healthy weight", "Avoid irritants", "Manage fluid intake"]
+  },
+  {
+    "id": 77,
+    "name": "Hypothermia",
+    "category": "Environmental",
+    "symptoms": ["hypothermia", "very cold body", "shivering extreme", "low body temperature", "cold exposure"],
+    "herbs": ["Ginger", "Cinnamon", "Black Pepper", "Cayenne", "Cardamom"],
+    "remedies": ["Warm drinks", "Gradual warming", "Warm blankets", "Body heat"],
+    "diet": ["Warm liquids", "High-calorie foods", "Warm soups", "Sweet drinks"],
+    "lifestyle": ["Gradual rewarming", "Remove wet clothing", "Seek medical help", "Stay dry"],
+    "prevention": ["Dress warmly", "Stay dry", "Limit cold exposure", "Adequate nutrition"]
+  },
+  {
+    "id": 78,
+    "name": "Heat Stroke",
+    "category": "Environmental",
+    "symptoms": ["heat stroke", "very high temperature", "heat exhaustion", "overheating", "hot body"],
+    "herbs": ["Coriander", "Mint", "Sandalwood", "Rose", "Coconut"],
+    "remedies": ["Cool water application", "Coconut water", "Cool compress", "Move to shade"],
+    "diet": ["Plenty of water", "Electrolyte drinks", "Light foods", "Avoid heavy meals"],
+    "lifestyle": ["Move to cool place", "Rest", "Cool body gradually", "Seek medical help if severe"],
+    "prevention": ["Stay hydrated", "Avoid sun during peak hours", "Wear light clothing", "Take breaks in shade"]
+  },
+  {
+    "id": 79,
+    "name": "Snoring",
+    "category": "Sleep Disorder",
+    "symptoms": ["snoring", "loud breathing sleep", "sleep apnea", "noisy breathing", "breathing obstruction"],
+    "herbs": ["Turmeric", "Cardamom", "Peppermint", "Ginger", "Eucalyptus"],
+    "remedies": ["Turmeric milk", "Nasal irrigation", "Peppermint tea", "Steam inhalation"],
+    "diet": ["Maintain healthy weight", "Avoid alcohol before bed", "Light dinner", "Adequate hydration"],
+    "lifestyle": ["Sleep on side", "Elevate head", "Maintain healthy weight", "Avoid alcohol before bed"],
+    "prevention": ["Maintain healthy weight", "Avoid alcohol", "Treat nasal congestion", "Regular sleep schedule"]
+  },
+  {
+    "id": 80,
+    "name": "Sleep Apnea",
+    "category": "Sleep Disorder",
+    "symptoms": ["sleep apnea", "breathing stops sleep", "gasping sleep", "excessive daytime sleepiness", "loud snoring"],
+    "herbs": ["Ashwagandha", "Brahmi", "Turmeric", "Ginger", "Cardamom"],
+    "remedies": ["Weight management", "Positional therapy", "Throat exercises", "Herbal support"],
+    "diet": ["Maintain healthy weight", "Anti-inflammatory foods", "Avoid alcohol", "Light dinner"],
+    "lifestyle": ["Sleep on side", "Maintain healthy weight", "Quit smoking", "Regular exercise"],
+    "prevention": ["Maintain healthy weight", "Avoid alcohol and sedatives", "Treat allergies", "Regular exercise"]
+  },
+  {
+    "id": 81,
+    "name": "Restless Leg Syndrome",
+    "category": "Neurological",
+    "symptoms": ["restless legs", "leg discomfort", "urge to move legs", "rls", "leg sensations"],
+    "herbs": ["Ashwagandha", "Valerian", "Chamomile", "Ginger", "Turmeric"],
+    "remedies": ["Leg massage", "Warm bath", "Magnesium supplementation", "Iron supplementation if deficient"],
+    "diet": ["Iron-rich foods", "Magnesium foods", "Avoid caffeine", "Balanced diet"],
+    "lifestyle": ["Regular exercise", "Leg massage", "Hot/cold therapy", "Good sleep hygiene"],
+    "prevention": ["Iron supplementation if needed", "Regular exercise", "Avoid triggers", "Stress management"]
+  },
+  {
+    "id": 82,
+    "name": "Carpal Tunnel Syndrome",
+    "category": "Joint & Muscle",
+    "symptoms": ["carpal tunnel", "wrist pain", "hand numbness", "tingling fingers", "weak grip"],
+    "herbs": ["Turmeric", "Ginger", "Ashwagandha", "Boswellia", "St. John's Wort"],
+    "remedies": ["Wrist splint", "Ice therapy", "Hand exercises", "Anti-inflammatory herbs"],
+    "diet": ["Anti-inflammatory foods", "B6 foods", "Omega-3 foods", "Stay hydrated"],
+    "lifestyle": ["Ergonomic workspace", "Take breaks", "Wrist exercises", "Proper posture"],
+    "prevention": ["Ergonomic setup", "Regular breaks", "Wrist stretches", "Avoid repetitive strain"]
+  },
+  {
+    "id": 83,
+    "name": "Frozen Shoulder",
+    "category": "Joint & Muscle",
+    "symptoms": ["frozen shoulder", "shoulder stiffness", "limited shoulder movement", "shoulder pain", "adhesive capsulitis"],
+    "herbs": ["Ashwagandha", "Guggul", "Turmeric", "Ginger", "Nirgundi"],
+    "remedies": ["Warm oil massage", "Hot compress", "Gentle stretching", "Physical therapy"],
+    "diet": ["Anti-inflammatory foods", "Omega-3 foods", "Turmeric in diet", "Stay hydrated"],
+    "lifestyle": ["Physical therapy", "Gentle exercises", "Avoid immobilization", "Heat therapy"],
+    "prevention": ["Regular shoulder exercises", "Avoid prolonged immobilization", "Proper posture", "Stay active"]
+  },
+  {
+    "id": 84,
+    "name": "Tennis Elbow",
+    "category": "Joint & Muscle",
+    "symptoms": ["tennis elbow", "elbow pain", "forearm pain", "lateral epicondylitis", "weak grip"],
+    "herbs": ["Turmeric", "Ginger", "Boswellia", "Ashwagandha", "Arnica"],
+    "remedies": ["Ice therapy", "Rest", "Compression", "Anti-inflammatory herbs"],
+    "diet": ["Anti-inflammatory foods", "Protein foods", "Collagen foods", "Vitamin C foods"],
+    "lifestyle": ["Rest affected arm", "Avoid repetitive movements", "Proper technique", "Strengthening exercises"],
+    "prevention": ["Proper technique", "Strengthen forearm", "Warm-up exercises", "Avoid overuse"]
+  },
+  {
+    "id": 85,
+    "name": "Sciatica",
+    "category": "Neurological",
+    "symptoms": ["sciatica", "leg pain", "lower back pain radiating", "nerve pain leg", "shooting pain"],
+    "herbs": ["Ashwagandha", "Turmeric", "Ginger", "Guggul", "St. John's Wort"],
+    "remedies": ["Hot/cold therapy", "Gentle stretching", "Massage", "Anti-inflammatory herbs"],
+    "diet": ["Anti-inflammatory diet", "Omega-3 foods", "Magnesium foods", "Adequate water"],
+    "lifestyle": ["Gentle exercise", "Proper posture", "Avoid prolonged sitting", "Physical therapy"],
+    "prevention": ["Regular exercise", "Proper lifting technique", "Maintain healthy weight", "Good posture"]
+  },
+  {
+    "id": 86,
+    "name": "Fibromyalgia",
+    "category": "Joint & Muscle",
+    "symptoms": ["fibromyalgia", "widespread pain", "chronic pain", "fatigue", "tender points"],
+    "herbs": ["Ashwagandha", "Turmeric", "Ginger", "St. John's Wort", "Rhodiola"],
+    "remedies": ["Gentle exercise", "Massage therapy", "Heat therapy", "Stress management"],
+    "diet": ["Anti-inflammatory diet", "Avoid trigger foods", "Omega-3 foods", "Magnesium foods"],
+    "lifestyle": ["Regular gentle exercise", "Stress management", "Adequate sleep", "Pace activities"],
+    "prevention": ["Stress management", "Regular exercise", "Good sleep hygiene", "Balanced diet"]
+  },
+  {
+    "id": 87,
+    "name": "Tendonitis",
+    "category": "Joint & Muscle",
+    "symptoms": ["tendonitis", "tendon pain", "tendon inflammation", "pain with movement", "swelling"],
+    "herbs": ["Turmeric", "Ginger", "Boswellia", "Ashwagandha", "Arnica"],
+    "remedies": ["RICE protocol", "Anti-inflammatory herbs", "Gentle stretching", "Physical therapy"],
+    "diet": ["Anti-inflammatory foods", "Protein foods", "Vitamin C foods", "Collagen sources"],
+    "lifestyle": ["Rest affected area", "Avoid repetitive motions", "Proper warm-up", "Gradual return to activity"],
+    "prevention": ["Proper warm-up", "Avoid overuse", "Strengthen muscles", "Proper technique"]
+  },
+  {
+    "id": 88,
+    "name": "Plantar Fasciitis",
+    "category": "Joint & Muscle",
+    "symptoms": ["plantar fasciitis", "heel pain", "foot pain morning", "arch pain", "heel spur"],
+    "herbs": ["Turmeric", "Ginger", "Ashwagandha", "Arnica", "Boswellia"],
+    "remedies": ["Ice massage", "Stretching exercises", "Night splint", "Massage"],
+    "diet": ["Anti-inflammatory foods", "Magnesium foods", "Stay hydrated", "Maintain healthy weight"],
+    "lifestyle": ["Proper footwear", "Stretching exercises", "Avoid barefoot walking", "Rest"],
+    "prevention": ["Proper footwear", "Maintain healthy weight", "Stretch regularly", "Avoid overuse"]
+  },
+  {
+    "id": 89,
+    "name": "Bursitis",
+    "category": "Joint & Muscle",
+    "symptoms": ["bursitis", "joint swelling", "painful movement", "inflammation", "tender joint"],
+    "herbs": ["Turmeric", "Ginger", "Boswellia", "Ashwagandha", "Guggul"],
+    "remedies": ["Ice therapy", "Rest", "Anti-inflammatory herbs", "Compression"],
+    "diet": ["Anti-inflammatory diet", "Omega-3 foods", "Turmeric", "Stay hydrated"],
+    "lifestyle": ["Rest affected joint", "Avoid repetitive movements", "Gentle exercises", "Physical therapy"],
+    "prevention": ["Avoid repetitive motions", "Proper warm-up", "Strengthen muscles", "Use protective padding"]
+  },
+  {
+    "id": 90,
+    "name": "Laryngitis",
+    "category": "Respiratory",
+    "symptoms": ["laryngitis", "hoarse voice", "voice loss", "throat inflammation", "weak voice"],
+    "herbs": ["Licorice", "Ginger", "Turmeric", "Honey", "Marshmallow Root"],
+    "remedies": ["Voice rest", "Warm herbal tea", "Steam inhalation", "Honey-lemon"],
+    "diet": ["Warm liquids", "Soft foods", "Honey", "Avoid irritants"],
+    "lifestyle": ["Rest voice", "Use humidifier", "Stay hydrated", "Avoid whispering"],
+    "prevention": ["Avoid voice strain", "Stay hydrated", "Avoid irritants", "Good hygiene"]
+  },
+  {
+    "id": 91,
+    "name": "Pneumonia",
+    "category": "Respiratory",
+    "symptoms": ["pneumonia", "chest infection", "severe cough", "difficulty breathing", "fever cough"],
+    "herbs": ["Tulsi", "Ginger", "Turmeric", "Garlic", "Licorice"],
+    "remedies": ["Steam inhalation", "Warm fluids", "Tulsi tea", "Rest"],
+    "diet": ["Nutritious foods", "Warm fluids", "Protein foods", "Avoid cold foods"],
+    "lifestyle": ["Adequate rest", "Stay hydrated", "Breathing exercises", "Avoid smoking"],
+    "prevention": ["Vaccination", "Boost immunity", "Good hygiene", "Avoid smoking"]
+  },
+  {
+    "id": 92,
+    "name": "Tuberculosis Support",
+    "category": "Respiratory",
+    "symptoms": ["tb", "tuberculosis", "persistent cough weeks", "night sweats", "weight loss cough"],
+    "herbs": ["Tulsi", "Ashwagandha", "Garlic", "Ginger", "Turmeric"],
+    "remedies": ["Nutritional support", "Tulsi tea", "Ashwagandha supplement", "Rest"],
+    "diet": ["High-calorie nutritious diet", "Protein foods", "Vitamin-rich foods", "Plenty of fluids"],
+    "lifestyle": ["Adequate rest", "Isolation during active phase", "Fresh air", "Sun exposure"],
+    "prevention": ["Vaccination", "Avoid infected persons", "Good ventilation", "Boost immunity"]
+  },
+  {
+    "id": 93,
+    "name": "Chronic Obstructive Pulmonary Disease Support",
+    "category": "Respiratory",
+    "symptoms": ["copd", "chronic cough", "breathlessness", "wheezing chronic", "mucus production"],
+    "herbs": ["Vasaka", "Licorice", "Turmeric", "Ginger", "Tulsi"],
+    "remedies": ["Breathing exercises", "Steam inhalation", "Herbal teas", "Avoid irritants"],
+    "diet": ["Nutritious diet", "Anti-inflammatory foods", "Adequate protein", "Stay hydrated"],
+    "lifestyle": ["Quit smoking", "Breathing exercises", "Regular exercise", "Avoid pollutants"],
+    "prevention": ["Avoid smoking", "Avoid pollutants", "Regular exercise", "Boost immunity"]
+  },
+  {
+    "id": 94,
+    "name": "Lymphedema",
+    "category": "Circulatory",
+    "symptoms": ["lymphedema", "swelling", "limb swelling", "fluid retention", "heaviness"],
+    "herbs": ["Punarnava", "Gokshura", "Horse Chestnut", "Gotu Kola", "Dandelion"],
+    "remedies": ["Compression garments", "Elevation", "Massage", "Exercise"],
+    "diet": ["Low sodium", "Anti-inflammatory foods", "Adequate protein", "Stay hydrated"],
+    "lifestyle": ["Compression therapy", "Elevation", "Gentle exercise", "Skin care"],
+    "prevention": ["Avoid injury to limb", "Maintain healthy weight", "Proper skin care", "Avoid infections"]
+  },
+  {
+    "id": 95,
+    "name": "Raynaud's Phenomenon",
+    "category": "Circulatory",
+    "symptoms": ["raynaud's", "cold fingers", "color change fingers", "numb fingers cold", "poor circulation"],
+    "herbs": ["Ginger", "Cayenne", "Ginkgo", "Hawthorn", "Cinnamon"],
+    "remedies": ["Keep warm", "Ginger tea", "Massage", "Avoid cold exposure"],
+    "diet": ["Warming foods", "Omega-3 foods", "Avoid caffeine", "Ginger and garlic"],
+    "lifestyle": ["Keep extremities warm", "Avoid smoking", "Stress management", "Regular exercise"],
+    "prevention": ["Stay warm", "Avoid triggers", "Quit smoking", "Stress management"]
+  },
+  {
+    "id": 96,
+    "name": "Edema",
+    "category": "Circulatory",
+    "symptoms": ["edema", "swelling", "fluid retention", "puffy", "water retention"],
+    "herbs": ["Punarnava", "Gokshura", "Dandelion", "Horsetail", "Coriander"],
+    "remedies": ["Elevate affected area", "Compression", "Reduce sodium", "Herbal diuretics"],
+    "diet": ["Low sodium", "Potassium-rich foods", "Adequate protein", "Stay hydrated"],
+    "lifestyle": ["Elevate legs", "Regular movement", "Avoid prolonged sitting", "Compression stockings"],
+    "prevention": ["Maintain healthy weight", "Regular exercise", "Limit sodium", "Elevate legs"]
+  },
+  {
+    "id": 97,
+    "name": "Mouth Ulcers",
+    "category": "Oral Health",
+    "symptoms": ["mouth ulcers", "canker sores", "oral sores", "painful mouth", "mouth pain"],
+    "herbs": ["Licorice", "Aloe Vera", "Turmeric", "Neem", "Honey"],
+    "remedies": ["Licorice root paste", "Aloe vera gel application", "Salt water rinse", "Honey application"],
+    "diet": ["Soft foods", "Avoid spicy and acidic foods", "Vitamin B foods", "Stay hydrated"],
+    "lifestyle": ["Gentle oral hygiene", "Avoid irritants", "Stress management", "Adequate sleep"],
+    "prevention": ["Avoid trigger foods", "Good oral hygiene", "Stress management", "Balanced diet"]
+  },
+  {
+    "id": 98,
+    "name": "Gingivitis",
+    "category": "Oral Health",
+    "symptoms": ["gingivitis", "bleeding gums", "gum inflammation", "red gums", "swollen gums"],
+    "herbs": ["Neem", "Clove", "Turmeric", "Tea Tree", "Sage"],
+    "remedies": ["Oil pulling", "Neem water rinse", "Salt water gargle", "Clove oil"],
+    "diet": ["Vitamin C foods", "Calcium foods", "Crunchy vegetables", "Avoid sugar"],
+    "lifestyle": ["Brush twice daily", "Floss daily", "Regular dental check-ups", "Avoid tobacco"],
+    "prevention": ["Good oral hygiene", "Regular dental visits", "Balanced diet", "Avoid tobacco"]
+  },
+  {
+    "id": 99,
+    "name": "Wisdom Tooth Pain",
+    "category": "Oral Health",
+    "symptoms": ["wisdom tooth pain", "jaw pain back", "tooth eruption pain", "swelling jaw", "impacted tooth"],
+    "herbs": ["Clove", "Turmeric", "Peppermint", "Salt", "Tea Tree"],
+    "remedies": ["Clove oil application", "Salt water rinse", "Ice pack", "Turmeric paste"],
+    "diet": ["Soft foods", "Avoid hard foods", "Cold foods", "Plenty of water"],
+    "lifestyle": ["Good oral hygiene", "Pain management", "Avoid hard foods", "See dentist"],
+    "prevention": ["Regular dental check-ups", "Good oral hygiene", "Early assessment", "Proper nutrition"]
+  },
+  {
+    "id": 100,
+    "name": "Nail Fungus",
+    "category": "Fungal",
+    "symptoms": ["nail fungus", "discolored nails", "thick nails", "brittle nails", "onychomycosis"],
+    "herbs": ["Tea Tree", "Oregano", "Garlic", "Neem", "Turmeric"],
+    "remedies": ["Tea tree oil application", "Vinegar soak", "Garlic paste", "Keep nails dry"],
+    "diet": ["Probiotic foods", "Immune-boosting foods", "Avoid sugar", "Stay hydrated"],
+    "lifestyle": ["Keep nails clean and dry", "Wear breathable shoes", "Trim nails regularly", "Avoid sharing tools"],
+    "prevention": ["Good hygiene", "Keep feet dry", "Avoid walking barefoot in public", "Breathable footwear"]
+  },
+  {
+    "id": 101,
+    "name": "Boils and Abscesses",
+    "category": "Skin",
+    "symptoms": ["boils", "abscess", "skin infection", "pus-filled bump", "painful lump"],
+    "herbs": ["Neem", "Turmeric", "Garlic", "Tea Tree", "Aloe Vera"],
+    "remedies": ["Warm compress", "Turmeric paste", "Neem paste", "Keep clean"],
+    "diet": ["Immune-boosting foods", "Avoid sugar", "Vitamin C foods", "Stay hydrated"],
+    "lifestyle": ["Good hygiene", "Avoid squeezing", "Clean affected area", "Boost immunity"],
+    "prevention": ["Good hygiene", "Boost immunity", "Avoid skin injuries", "Clean skin regularly"]
+  },
+  {
+    "id": 102,
+    "name": "Cellulite",
+    "category": "Skin",
+    "symptoms": ["cellulite", "dimpled skin", "orange peel skin", "skin texture", "lumpy skin"],
+    "herbs": ["Gotu Kola", "Ginkgo", "Horse Chestnut", "Green Tea", "Cayenne"],
+    "remedies": ["Dry brushing", "Massage", "Coffee scrub", "Exercise"],
+    "diet": ["Hydrate well", "Anti-inflammatory foods", "Reduce processed foods", "Healthy fats"],
+    "lifestyle": ["Regular exercise", "Maintain healthy weight", "Massage", "Stay hydrated"],
+    "prevention": ["Healthy diet", "Regular exercise", "Maintain healthy weight", "Stay hydrated"]
+  },
+  {
+    "id": 103,
+    "name": "Stretch Marks",
+    "category": "Skin",
+    "symptoms": ["stretch marks", "skin stripes", "scarring skin", "striae", "skin marks"],
+    "herbs": ["Aloe Vera", "Coconut Oil", "Cocoa Butter", "Vitamin E", "Argan Oil"],
+    "remedies": ["Coconut oil massage", "Aloe vera application", "Vitamin E oil", "Cocoa butter"],
+    "diet": ["Vitamin C foods", "Zinc foods", "Protein foods", "Stay hydrated"],
+    "lifestyle": ["Moisturize regularly", "Maintain healthy weight", "Gradual weight changes", "Massage"],
+    "prevention": ["Maintain healthy weight", "Stay hydrated", "Moisturize skin", "Gradual weight changes"]
+  },
+  {
+    "id": 104,
+    "name": "Sunburn",
+    "category": "Skin",
+    "symptoms": ["sunburn", "burned skin", "red skin sun", "painful skin sun", "peeling skin"],
+    "herbs": ["Aloe Vera", "Coconut Oil", "Lavender", "Chamomile", "Cucumber"],
+    "remedies": ["Aloe vera gel", "Cool compress", "Coconut oil", "Cold bath"],
+    "diet": ["Hydrate well", "Vitamin C foods", "Antioxidant foods", "Stay hydrated"],
+    "lifestyle": ["Stay out of sun", "Cool baths", "Moisturize", "Avoid peeling skin"],
+    "prevention": ["Use sunscreen", "Avoid peak sun hours", "Protective clothing", "Seek shade"]
+  },
+  {
+    "id": 105,
+    "name": "Insect Bites",
+    "category": "Skin",
+    "symptoms": ["insect bites", "bug bites", "itchy bites", "swelling bites", "red bumps"],
+    "herbs": ["Neem", "Aloe Vera", "Tea Tree", "Basil", "Turmeric"],
+    "remedies": ["Ice pack", "Aloe vera gel", "Neem paste", "Baking soda paste"],
+    "diet": ["Immune-boosting foods", "Anti-inflammatory foods", "Stay hydrated", "Vitamin C"],
+    "lifestyle": ["Avoid scratching", "Keep clean", "Use repellents", "Cover exposed skin"],
+    "prevention": ["Use insect repellent", "Wear protective clothing", "Avoid infested areas", "Use mosquito nets"]
+  }
+];
+        window._herbsData = [
+  {
+    "id": 1,
+    "name": "Tulsi (Holy Basil)",
+    "scientificName": "Ocimum sanctum",
+    "category": "Respiratory & Immunity",
+    "description": "Known as the 'Queen of Herbs', Tulsi is a sacred plant in Ayurveda renowned for its powerful immune-boosting and adaptogenic properties.",
+    "benefits": [
+      "Boosts immunity",
+      "Reduces stress and anxiety",
+      "Fights respiratory infections",
+      "Antioxidant and anti-inflammatory",
+      "Supports heart health",
+      "Regulates blood sugar"
+    ],
+    "uses": [
+      "Respiratory infections (cold, cough, bronchitis)",
+      "Fever",
+      "Stress management",
+      "Immune support",
+      "Skin care"
+    ],
+    "preparation": "Tea (steep 5-10 fresh leaves in hot water), fresh leaf consumption, powder form",
+    "dosage": "5-10 fresh leaves daily or 1-2 cups of Tulsi tea",
+    "precautions": "May lower blood sugar; consult doctor if diabetic. Avoid during pregnancy in excess amounts."
+  },
+  {
+    "id": 2,
+    "name": "Ashwagandha (Indian Ginseng)",
+    "scientificName": "Withania somnifera",
+    "category": "Adaptogen & Energy",
+    "description": "A powerful adaptogenic herb that helps the body manage stress, boosts energy, and supports overall vitality and strength.",
+    "benefits": [
+      "Reduces stress and anxiety",
+      "Improves energy and stamina",
+      "Enhances cognitive function",
+      "Supports immune system",
+      "Improves sleep quality",
+      "Balances hormones",
+      "Anti-inflammatory"
+    ],
+    "uses": [
+      "Stress and anxiety",
+      "Insomnia",
+      "Fatigue and weakness",
+      "Cognitive decline",
+      "Joint pain",
+      "Male fertility issues"
+    ],
+    "preparation": "Powder mixed with warm milk or water, capsules, tincture",
+    "dosage": "300-500mg twice daily or 1 teaspoon powder with milk",
+    "precautions": "Avoid during pregnancy. May interact with thyroid medications. Can cause drowsiness."
+  },
+  {
+    "id": 3,
+    "name": "Turmeric (Haldi)",
+    "scientificName": "Curcuma longa",
+    "category": "Anti-inflammatory & Digestive",
+    "description": "The golden spice of Ayurveda, containing curcumin, a powerful anti-inflammatory and antioxidant compound.",
+    "benefits": [
+      "Powerful anti-inflammatory",
+      "Strong antioxidant",
+      "Supports liver health",
+      "Aids digestion",
+      "Boosts immunity",
+      "Promotes skin health",
+      "Supports joint health"
+    ],
+    "uses": [
+      "Arthritis and joint pain",
+      "Digestive issues",
+      "Skin conditions",
+      "Wound healing",
+      "Respiratory infections",
+      "Liver support"
+    ],
+    "preparation": "Golden milk (turmeric latte), added to food, paste for external use, capsules",
+    "dosage": "1/2 to 1 teaspoon powder daily with black pepper (enhances absorption)",
+    "precautions": "High doses may cause digestive upset. May interact with blood thinners. Use with black pepper for better absorption."
+  },
+  {
+    "id": 4,
+    "name": "Ginger (Adrak)",
+    "scientificName": "Zingiber officinale",
+    "category": "Digestive & Anti-inflammatory",
+    "description": "A warming herb excellent for digestion, nausea, and inflammation, commonly used in Ayurvedic cooking and medicine.",
+    "benefits": [
+      "Aids digestion",
+      "Relieves nausea",
+      "Anti-inflammatory",
+      "Boosts immunity",
+      "Relieves pain",
+      "Improves circulation",
+      "Supports respiratory health"
+    ],
+    "uses": [
+      "Indigestion and bloating",
+      "Nausea and motion sickness",
+      "Cold and flu",
+      "Joint pain",
+      "Menstrual cramps",
+      "Respiratory congestion"
+    ],
+    "preparation": "Fresh ginger tea, juice, added to food, candied ginger",
+    "dosage": "1-2 grams fresh ginger or 2-3 cups of ginger tea daily",
+    "precautions": "May interact with blood thinners. High doses may cause heartburn. Avoid excess during pregnancy."
+  },
+  {
+    "id": 5,
+    "name": "Neem",
+    "scientificName": "Azadirachta indica",
+    "category": "Skin & Blood Purifier",
+    "description": "A powerful blood purifier and antibacterial herb, excellent for skin conditions and detoxification.",
+    "benefits": [
+      "Purifies blood",
+      "Antibacterial and antifungal",
+      "Treats skin conditions",
+      "Boosts immunity",
+      "Supports oral health",
+      "Controls blood sugar",
+      "Anti-parasitic"
+    ],
+    "uses": [
+      "Acne and skin infections",
+      "Dandruff",
+      "Eczema and psoriasis",
+      "Oral health",
+      "Blood purification",
+      "Diabetes support"
+    ],
+    "preparation": "Neem leaf powder, neem water, neem oil for external use, neem stick for teeth",
+    "dosage": "2-4 grams powder daily or neem tea",
+    "precautions": "Avoid during pregnancy and breastfeeding. May lower blood sugar. Start with low doses."
+  },
+  {
+    "id": 6,
+    "name": "Amla (Indian Gooseberry)",
+    "scientificName": "Emblica officinalis",
+    "category": "Vitamin C & Rejuvenation",
+    "description": "One of the richest natural sources of Vitamin C, Amla is a powerful rejuvenating and immune-boosting herb.",
+    "benefits": [
+      "Rich in Vitamin C",
+      "Boosts immunity",
+      "Promotes hair growth",
+      "Improves digestion",
+      "Supports eye health",
+      "Anti-aging properties",
+      "Regulates blood sugar"
+    ],
+    "uses": [
+      "Immune support",
+      "Hair loss and premature graying",
+      "Digestive disorders",
+      "Diabetes",
+      "Eye health",
+      "Anemia"
+    ],
+    "preparation": "Fresh juice, powder, dried fruit, Chyawanprash (Ayurvedic jam)",
+    "dosage": "10-20ml juice daily or 3-6 grams powder",
+    "precautions": "May lower blood sugar. Avoid with cold or cough in excess. Can cause loose stools in high doses."
+  },
+  {
+    "id": 7,
+    "name": "Brahmi",
+    "scientificName": "Bacopa monnieri",
+    "category": "Brain & Nervous System",
+    "description": "A renowned brain tonic that enhances memory, cognitive function, and mental clarity.",
+    "benefits": [
+      "Enhances memory and learning",
+      "Improves cognitive function",
+      "Reduces anxiety and stress",
+      "Supports nervous system",
+      "Antioxidant properties",
+      "Improves concentration",
+      "Neuroprotective"
+    ],
+    "uses": [
+      "Memory loss and cognitive decline",
+      "Anxiety and stress",
+      "ADHD",
+      "Insomnia",
+      "Epilepsy support",
+      "Mental fatigue"
+    ],
+    "preparation": "Powder with ghee or honey, capsules, tea, Brahmi oil for scalp massage",
+    "dosage": "300-450mg daily or 1/2 teaspoon powder twice daily",
+    "precautions": "May cause drowsiness. Avoid during pregnancy. May interact with thyroid medications."
+  },
+  {
+    "id": 8,
+    "name": "Triphala",
+    "scientificName": "Three fruits combination",
+    "category": "Digestive & Detoxification",
+    "description": "A combination of three fruits (Amalaki, Bibhitaki, Haritaki) that supports digestion, detoxification, and overall health.",
+    "benefits": [
+      "Improves digestion",
+      "Gentle detoxification",
+      "Regulates bowel movements",
+      "Supports eye health",
+      "Anti-inflammatory",
+      "Antioxidant rich",
+      "Supports weight management"
+    ],
+    "uses": [
+      "Constipation",
+      "Digestive disorders",
+      "Eye health",
+      "Weight management",
+      "Detoxification",
+      "Skin health"
+    ],
+    "preparation": "Powder mixed with warm water (preferably at night), tablets, tea",
+    "dosage": "3-6 grams powder at bedtime with warm water",
+    "precautions": "May cause loose stools. Avoid during pregnancy and diarrhea. Start with low dose."
+  },
+  {
+    "id": 9,
+    "name": "Shatavari",
+    "scientificName": "Asparagus racemosus",
+    "category": "Women's Health & Rejuvenation",
+    "description": "The primary female rejuvenative herb in Ayurveda, supporting reproductive health and hormonal balance.",
+    "benefits": [
+      "Balances female hormones",
+      "Supports reproductive health",
+      "Increases lactation",
+      "Reduces menopausal symptoms",
+      "Boosts immunity",
+      "Calming and cooling",
+      "Anti-inflammatory"
+    ],
+    "uses": [
+      "Menstrual irregularities",
+      "PCOS",
+      "Menopause symptoms",
+      "Low milk production",
+      "Infertility",
+      "Digestive issues"
+    ],
+    "preparation": "Powder with milk or water, capsules, liquid extract",
+    "dosage": "3-6 grams powder daily with milk",
+    "precautions": "Avoid if you have estrogen-sensitive conditions. May interact with diuretics."
+  },
+  {
+    "id": 10,
+    "name": "Guduchi (Giloy)",
+    "scientificName": "Tinospora cordifolia",
+    "category": "Immunity & Fever",
+    "description": "A powerful immune-modulator and rejuvenative herb, excellent for fever and chronic infections.",
+    "benefits": [
+      "Powerful immune booster",
+      "Reduces fever",
+      "Anti-inflammatory",
+      "Purifies blood",
+      "Supports liver health",
+      "Anti-allergic",
+      "Rejuvenating"
+    ],
+    "uses": [
+      "Frequent infections",
+      "Chronic fever",
+      "Allergies",
+      "Liver disorders",
+      "Arthritis",
+      "Diabetes support"
+    ],
+    "preparation": "Fresh stem juice, powder, decoction, capsules",
+    "dosage": "20-30ml juice daily or 3-6 grams powder",
+    "precautions": "May lower blood sugar. Avoid during pregnancy. May cause constipation in some."
+  },
+  {
+    "id": 11,
+    "name": "Guggul",
+    "scientificName": "Commiphora mukul",
+    "category": "Weight & Cholesterol",
+    "description": "A resin known for supporting healthy cholesterol levels, weight management, and joint health.",
+    "benefits": [
+      "Lowers cholesterol",
+      "Supports weight loss",
+      "Anti-inflammatory",
+      "Supports thyroid function",
+      "Improves joint health",
+      "Detoxifies",
+      "Supports skin health"
+    ],
+    "uses": [
+      "High cholesterol",
+      "Obesity",
+      "Arthritis",
+      "Hypothyroidism",
+      "Acne",
+      "Atherosclerosis"
+    ],
+    "preparation": "Resin extract, tablets, capsules",
+    "dosage": "75-150mg guggulsterones daily",
+    "precautions": "May interact with thyroid medications. Avoid during pregnancy. May cause digestive upset."
+  },
+  {
+    "id": 12,
+    "name": "Arjuna",
+    "scientificName": "Terminalia arjuna",
+    "category": "Heart Health",
+    "description": "The premier cardiovascular tonic in Ayurveda, supporting heart health and blood pressure.",
+    "benefits": [
+      "Supports heart health",
+      "Strengthens cardiac muscles",
+      "Regulates blood pressure",
+      "Lowers cholesterol",
+      "Improves circulation",
+      "Antioxidant",
+      "Wound healing"
+    ],
+    "uses": [
+      "Heart conditions",
+      "High blood pressure",
+      "High cholesterol",
+      "Angina",
+      "Poor circulation",
+      "Wound healing"
+    ],
+    "preparation": "Bark powder with milk or water, decoction, capsules",
+    "dosage": "3-6 grams powder daily or as directed",
+    "precautions": "Consult doctor if on heart medications. May interact with blood pressure drugs."
+  },
+  {
+    "id": 13,
+    "name": "Shilajit",
+    "scientificName": "Mineral pitch",
+    "category": "Energy & Vitality",
+    "description": "A mineral-rich substance that enhances energy, stamina, and overall vitality.",
+    "benefits": [
+      "Increases energy and stamina",
+      "Enhances fertility",
+      "Supports cognitive function",
+      "Anti-aging",
+      "Boosts testosterone",
+      "Improves nutrient absorption",
+      "Supports immune system"
+    ],
+    "uses": [
+      "Fatigue and weakness",
+      "Male infertility",
+      "Cognitive decline",
+      "Anemia",
+      "Chronic fatigue",
+      "Altitude sickness"
+    ],
+    "preparation": "Resin dissolved in water or milk, capsules",
+    "dosage": "300-500mg daily with milk",
+    "precautions": "Use only purified shilajit. May increase uric acid. Avoid if you have gout."
+  },
+  {
+    "id": 14,
+    "name": "Gokshura",
+    "scientificName": "Tribulus terrestris",
+    "category": "Urinary & Reproductive",
+    "description": "Supports urinary health, kidney function, and reproductive vitality in both men and women.",
+    "benefits": [
+      "Supports kidney health",
+      "Enhances libido",
+      "Improves urinary function",
+      "Boosts energy",
+      "Supports muscle building",
+      "Reduces inflammation",
+      "Supports heart health"
+    ],
+    "uses": [
+      "Urinary tract infections",
+      "Kidney stones",
+      "Prostate problems",
+      "Male infertility",
+      "Low libido",
+      "Athletic performance"
+    ],
+    "preparation": "Powder, tea, capsules, decoction",
+    "dosage": "3-6 grams powder daily",
+    "precautions": "May interact with diabetes and blood pressure medications. Avoid during pregnancy."
+  },
+  {
+    "id": 15,
+    "name": "Licorice (Mulethi)",
+    "scientificName": "Glycyrrhiza glabra",
+    "category": "Respiratory & Digestive",
+    "description": "A sweet root that soothes respiratory and digestive systems, with anti-inflammatory properties.",
+    "benefits": [
+      "Soothes respiratory tract",
+      "Heals stomach ulcers",
+      "Anti-inflammatory",
+      "Supports adrenal health",
+      "Boosts immunity",
+      "Skin healing",
+      "Hormone balancing"
+    ],
+    "uses": [
+      "Cough and sore throat",
+      "Stomach ulcers",
+      "Gastritis",
+      "Adrenal fatigue",
+      "Skin conditions",
+      "Menopause symptoms"
+    ],
+    "preparation": "Root powder, tea, lozenges, decoction",
+    "dosage": "1-2 grams powder daily or tea",
+    "precautions": "Avoid with high blood pressure, heart disease, or kidney disease. Long-term use may cause potassium loss."
+  },
+  {
+    "id": 16,
+    "name": "Bhringraj",
+    "scientificName": "Eclipta alba",
+    "category": "Hair & Liver",
+    "description": "Known as the 'King of Herbs' for hair, it promotes hair growth and supports liver health.",
+    "benefits": [
+      "Promotes hair growth",
+      "Prevents hair loss",
+      "Prevents premature graying",
+      "Supports liver health",
+      "Improves skin",
+      "Enhances memory",
+      "Anti-inflammatory"
+    ],
+    "uses": [
+      "Hair loss",
+      "Premature graying",
+      "Liver disorders",
+      "Skin problems",
+      "Insomnia",
+      "Memory issues"
+    ],
+    "preparation": "Oil for hair massage, powder, fresh juice",
+    "dosage": "3-6 grams powder or regular oil massage",
+    "precautions": "Generally safe. May cause allergic reactions in some individuals."
+  },
+  {
+    "id": 17,
+    "name": "Manjistha",
+    "scientificName": "Rubia cordifolia",
+    "category": "Blood Purifier & Skin",
+    "description": "A powerful blood purifier and lymphatic cleanser, excellent for skin conditions.",
+    "benefits": [
+      "Purifies blood",
+      "Clears skin conditions",
+      "Supports lymphatic system",
+      "Anti-inflammatory",
+      "Wound healing",
+      "Regulates menstruation",
+      "Antioxidant"
+    ],
+    "uses": [
+      "Acne and skin pigmentation",
+      "Psoriasis and eczema",
+      "Lymphatic congestion",
+      "Menstrual irregularities",
+      "Urinary tract infections",
+      "Wounds and injuries"
+    ],
+    "preparation": "Powder, decoction, capsules, paste for external use",
+    "dosage": "3-6 grams powder daily",
+    "precautions": "May color urine red (harmless). Avoid during pregnancy."
+  },
+  {
+    "id": 18,
+    "name": "Haritaki",
+    "scientificName": "Terminalia chebula",
+    "category": "Digestive & Rejuvenation",
+    "description": "One of the three fruits in Triphala, considered the 'King of Medicines' for its wide-ranging benefits.",
+    "benefits": [
+      "Improves digestion",
+      "Natural laxative",
+      "Detoxifies body",
+      "Improves brain function",
+      "Anti-aging",
+      "Boosts immunity",
+      "Antimicrobial"
+    ],
+    "uses": [
+      "Constipation",
+      "Digestive disorders",
+      "Detoxification",
+      "Cough and cold",
+      "Wound healing",
+      "Eye disorders"
+    ],
+    "preparation": "Powder, decoction, tablets",
+    "dosage": "3-6 grams powder or as part of Triphala",
+    "precautions": "Avoid during pregnancy and acute diarrhea. May cause loose stools."
+  },
+  {
+    "id": 19,
+    "name": "Fennel (Saunf)",
+    "scientificName": "Foeniculum vulgare",
+    "category": "Digestive",
+    "description": "A digestive aid that reduces bloating, gas, and supports healthy digestion with a sweet, pleasant taste.",
+    "benefits": [
+      "Improves digestion",
+      "Reduces bloating and gas",
+      "Freshens breath",
+      "Supports lactation",
+      "Anti-inflammatory",
+      "Antioxidant",
+      "Relieves menstrual cramps"
+    ],
+    "uses": [
+      "Indigestion and bloating",
+      "Gas and flatulence",
+      "Colic in babies",
+      "Menstrual cramps",
+      "Low milk production",
+      "Bad breath"
+    ],
+    "preparation": "Chew seeds after meals, tea, powder",
+    "dosage": "5-10 grams seeds or 2-3 cups tea daily",
+    "precautions": "Generally safe. Avoid in large amounts during pregnancy."
+  },
+  {
+    "id": 20,
+    "name": "Cinnamon (Dalchini)",
+    "scientificName": "Cinnamomum verum",
+    "category": "Metabolic & Digestive",
+    "description": "A warming spice that regulates blood sugar, improves digestion, and has antimicrobial properties.",
+    "benefits": [
+      "Regulates blood sugar",
+      "Improves digestion",
+      "Anti-inflammatory",
+      "Antimicrobial",
+      "Boosts metabolism",
+      "Improves circulation",
+      "Antioxidant"
+    ],
+    "uses": [
+      "Diabetes management",
+      "Poor digestion",
+      "Cold and flu",
+      "Menstrual cramps",
+      "High cholesterol",
+      "Weight management"
+    ],
+    "preparation": "Added to food, tea, powder",
+    "dosage": "1-2 grams daily or 1/2 teaspoon powder",
+    "precautions": "High doses may be toxic. Avoid during pregnancy in medicinal amounts. May interact with diabetes medications."
+  }
+];
+    </script>
+
+    <!-- ============================================================ -->
+    <!-- SPA ROUTER -->
+    <!-- ============================================================ -->
+    <script>
+    (function() {
+        // Pages that have been initialized
+        const initializedPages = {};
+
+        function showPage(pageId) {
+            // Hide all pages
+            document.querySelectorAll('.page-section').forEach(function(el) {
+                el.classList.remove('active');
+            });
+
+            // Show target page
+            var target = document.getElementById('page-' + pageId);
+            if (target) {
+                target.classList.add('active');
+            }
+
+            // Update nav active state
+            document.querySelectorAll('.nav-link[data-page]').forEach(function(link) {
+                if (link.dataset.page === pageId) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+
+            // Initialize page-specific JS if not yet done
+            if (!initializedPages[pageId]) {
+                initializedPages[pageId] = true;
+                if (pageId === 'herbs') {
+                    initHerbsPage();
+                } else if (pageId === 'remedies') {
+                    initRemediesPage();
+                } else if (pageId === 'analyzer') {
+                    initAnalyzerPage();
+                }
+            }
+        }
+
+        // Attach click listeners to all nav links
+        function attachNavListeners() {
+            document.querySelectorAll('.nav-link[data-page]').forEach(function(link) {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    var page = this.dataset.page;
+                    if (page) showPage(page);
+                    // Close mobile menu
+                    var hamburger = document.getElementById('hamburger');
+                    var navMenu = document.getElementById('navMenu');
+                    if (hamburger) hamburger.classList.remove('active');
+                    if (navMenu) navMenu.classList.remove('active');
+                });
+            });
+        }
+
+        // Mobile hamburger
+        function setupHamburger() {
+            var hamburger = document.getElementById('hamburger');
+            var navMenu = document.getElementById('navMenu');
+            if (hamburger && navMenu) {
+                hamburger.addEventListener('click', function() {
+                    hamburger.classList.toggle('active');
+                    navMenu.classList.toggle('active');
+                });
+                document.addEventListener('click', function(e) {
+                    if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+                        hamburger.classList.remove('active');
+                        navMenu.classList.remove('active');
+                    }
+                });
+            }
+        }
+
+        // Expose showPage globally for any inline usage
+        window.showPage = showPage;
+
+        document.addEventListener('DOMContentLoaded', function() {
+            attachNavListeners();
+            setupHamburger();
+
+            // Add scroll effect to navbar
+            var navbar = document.querySelector('.navbar');
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 100) {
+                    navbar.style.boxShadow = '0 4px 16px rgba(29, 67, 50, 0.15)';
+                } else {
+                    navbar.style.boxShadow = '0 2px 8px rgba(29, 67, 50, 0.08)';
+                }
+            });
+
+            // Animate home page cards
+            var observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+            var observer = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+            document.querySelectorAll('.feature-card, .category-card, .step').forEach(function(el) {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
+            });
+
+            // Notification animation styles
+            var notifStyle = document.createElement('style');
+            notifStyle.textContent = `
+                @keyframes slideInRight {
+                    from { transform: translateX(400px); opacity: 0; }
+                    to { transform: translateX(0); opacity: 1; }
+                }
+                @keyframes slideOutRight {
+                    from { transform: translateX(0); opacity: 1; }
+                    to { transform: translateX(400px); opacity: 0; }
+                }
+            `;
+            document.head.appendChild(notifStyle);
+        });
+    })();
+    </script>
+
+    <!-- ============================================================ -->
+    <!-- UTILITY FUNCTIONS (from main.js) -->
+    <!-- ============================================================ -->
+    <script>
+    function capitalizeFirstLetter(string) {
+        return string.charAt(0).toUpperCase() + string.slice(1);
+    }
+
+    function showNotification(message, type) {
+        type = type || 'info';
+        var existing = document.querySelector('.notification-toast');
+        if (existing) existing.remove();
+        var notification = document.createElement('div');
+        notification.className = 'notification-toast notification-' + type;
+        notification.textContent = message;
+        notification.style.cssText = 'position:fixed;bottom:20px;right:20px;background:' +
+            (type === 'success' ? '#52b788' : type === 'error' ? '#ef476f' : '#2d6a4f') +
+            ';color:white;padding:1rem 1.5rem;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,0.2);z-index:10000;animation:slideInRight 0.3s ease;max-width:300px;';
+        document.body.appendChild(notification);
+        setTimeout(function() {
+            notification.style.animation = 'slideOutRight 0.3s ease';
+            setTimeout(function() { notification.remove(); }, 300);
+        }, 3000);
+    }
+    </script>
+
+    <!-- ============================================================ -->
+    <!-- ANALYZER PAGE JS (scoped init function) -->
+    <!-- ============================================================ -->
+    <script>
+    // Analyzer variables
+    var analyzerConditionsData = [];
+    var analyzerSetupDone = false;
+
+    function initAnalyzerPage() {
+        analyzerConditionsData = window._conditionsData || [];
+        if (!analyzerSetupDone) {
+            analyzerSetupDone = true;
+            setupAnalyzer();
+        }
+    }
+
+    function setupAnalyzer() {
+        var analyzeBtn = document.getElementById('analyzeBtn');
+        var clearBtn = document.getElementById('clearBtn');
+        var symptomInput = document.getElementById('symptomInput');
+        if (analyzeBtn) analyzeBtn.addEventListener('click', analyzeSymptoms);
+        if (clearBtn) clearBtn.addEventListener('click', clearAnalysis);
+        if (symptomInput) {
+            symptomInput.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' && e.ctrlKey) analyzeSymptoms();
+            });
+        }
+    }
+
+    function fillExample(text) {
+        var symptomInput = document.getElementById('symptomInput');
+        if (symptomInput) { symptomInput.value = text; symptomInput.focus(); }
+    }
+
+    function analyzeSymptoms() {
+        var symptomInput = document.getElementById('symptomInput');
+        var inputText = symptomInput.value.trim().toLowerCase();
+        if (!inputText) { showNotification('Please describe your symptoms first', 'error'); symptomInput.focus(); return; }
+        if (inputText.length < 3) { showNotification('Please provide more detailed symptoms', 'error'); return; }
+        showLoading();
+        setTimeout(function() {
+            var results = matchSymptoms(inputText);
+            displayResults(results, inputText);
+        }, 1000);
+    }
+
+    function matchSymptoms(inputText) {
+        var results = [];
+        var words = inputText.split(/\W+/).filter(function(w) { return w.length > 2; });
+        analyzerConditionsData.forEach(function(condition) {
+            var matchScore = 0;
+            var matchedSymptoms = [];
+            condition.symptoms.forEach(function(symptom) {
+                var symptomWords = symptom.toLowerCase().split(/\W+/);
+                words.forEach(function(word) {
+                    symptomWords.forEach(function(symptomWord) {
+                        if (word === symptomWord) {
+                            matchScore += 10;
+                            if (matchedSymptoms.indexOf(symptom) === -1) matchedSymptoms.push(symptom);
+                        } else if (word.length > 3 && symptomWord.length > 3) {
+                            if (word.includes(symptomWord) || symptomWord.includes(word)) {
+                                matchScore += 5;
+                                if (matchedSymptoms.indexOf(symptom) === -1) matchedSymptoms.push(symptom);
+                            }
+                        }
+                    });
+                });
+            });
+            if (inputText.includes(condition.name.toLowerCase())) matchScore += 15;
+            if (matchScore > 0) results.push({ condition: condition, score: matchScore, matchedSymptoms: matchedSymptoms });
+        });
+        results.sort(function(a, b) { return b.score - a.score; });
+        return results.slice(0, 5);
+    }
+
+    function showLoading() {
+        var loadingState = document.getElementById('loadingState');
+        var resultsContainer = document.getElementById('resultsContainer');
+        var inputCard = document.getElementById('analyzerInputCard');
+        if (loadingState && resultsContainer) {
+            inputCard.style.display = 'none';
+            resultsContainer.style.display = 'none';
+            loadingState.style.display = 'block';
+            loadingState.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+    }
+
+    function displayResults(results, inputText) {
+        var loadingState = document.getElementById('loadingState');
+        var resultsContainer = document.getElementById('resultsContainer');
+        var detectedSymptoms = document.getElementById('detectedSymptoms');
+        var matchedConditions = document.getElementById('matchedConditions');
+        var noResults = document.getElementById('noResults');
+        var inputCard = document.getElementById('analyzerInputCard');
+        loadingState.style.display = 'none';
+        resultsContainer.style.display = 'block';
+        inputCard.style.display = 'block';
+        if (results.length === 0) {
+            noResults.style.display = 'block';
+            detectedSymptoms.style.display = 'none';
+            matchedConditions.innerHTML = '';
+        } else {
+            noResults.style.display = 'none';
+            detectedSymptoms.style.display = 'block';
+            var uniqueSymptoms = [];
+            results.forEach(function(r) { r.matchedSymptoms.forEach(function(s) { if (uniqueSymptoms.indexOf(s) === -1) uniqueSymptoms.push(s); }); });
+            detectedSymptoms.innerHTML = '<h3><i class="fas fa-check-circle"></i> Detected Symptoms</h3><div class="symptom-badges">' +
+                uniqueSymptoms.map(function(s) { return '<span class="symptom-badge">' + capitalizeFirstLetter(s) + '</span>'; }).join('') + '</div>';
+            matchedConditions.innerHTML = results.map(function(r) { return createConditionCard(r.condition); }).join('');
+        }
+        resultsContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    function createConditionCard(condition) {
+        return '<div class="condition-card"><div class="condition-header"><h3><i class="fas fa-notes-medical"></i> ' + condition.name + '</h3><span class="condition-category">' + condition.category + '</span></div>' +
+            '<div class="condition-section"><h4><i class="fas fa-leaf"></i> Recommended Herbs</h4><ul>' + condition.herbs.map(function(h) { return '<li>' + h + '</li>'; }).join('') + '</ul></div>' +
+            '<div class="condition-section"><h4><i class="fas fa-mortar-pestle"></i> Natural Remedies</h4><ul>' + condition.remedies.map(function(r) { return '<li>' + r + '</li>'; }).join('') + '</ul></div>' +
+            '<div class="condition-section"><h4><i class="fas fa-utensils"></i> Dietary Suggestions</h4><ul>' + condition.diet.map(function(d) { return '<li>' + d + '</li>'; }).join('') + '</ul></div>' +
+            '<div class="condition-section"><h4><i class="fas fa-spa"></i> Lifestyle Practices</h4><ul>' + condition.lifestyle.map(function(l) { return '<li>' + l + '</li>'; }).join('') + '</ul></div>' +
+            '<div class="condition-section"><h4><i class="fas fa-shield-alt"></i> Prevention Tips</h4><ul>' + condition.prevention.map(function(p) { return '<li>' + p + '</li>'; }).join('') + '</ul></div></div>';
+    }
+
+    function clearAnalysis() {
+        var symptomInput = document.getElementById('symptomInput');
+        var resultsContainer = document.getElementById('resultsContainer');
+        var loadingState = document.getElementById('loadingState');
+        symptomInput.value = '';
+        resultsContainer.style.display = 'none';
+        loadingState.style.display = 'none';
+        symptomInput.focus();
+        var inputCard = document.getElementById('analyzerInputCard');
+        if (inputCard) inputCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    window.fillExample = fillExample;
+    </script>
+
+    <!-- ============================================================ -->
+    <!-- HERBS PAGE JS (scoped init function) -->
+    <!-- ============================================================ -->
+    <script>
+    var herbsData = [];
+    var herbsCurrentCategory = 'all';
+    var herbsSearchTerm = '';
+    var herbsSetupDone = false;
+
+    function initHerbsPage() {
+        herbsData = window._herbsData || [];
+        if (!herbsSetupDone) {
+            herbsSetupDone = true;
+            displayHerbs();
+            setupHerbFilters();
+            setupHerbSearch();
+            setupModal();
+        }
+    }
+
+    function setupHerbFilters() {
+        var filterButtons = document.querySelectorAll('.filter-btn');
+        filterButtons.forEach(function(button) {
+            button.addEventListener('click', function() {
+                filterButtons.forEach(function(btn) { btn.classList.remove('active'); });
+                this.classList.add('active');
+                herbsCurrentCategory = this.dataset.category;
+                displayHerbs();
+            });
+        });
+    }
+
+    function setupHerbSearch() {
+        var searchInput = document.getElementById('herbSearch');
+        if (searchInput) {
+            searchInput.addEventListener('input', function() {
+                herbsSearchTerm = this.value.toLowerCase().trim();
+                displayHerbs();
+            });
+        }
+    }
+
+    function filterHerbs() {
+        return herbsData.filter(function(herb) {
+            var categoryMatch = herbsCurrentCategory === 'all' || herb.category.toLowerCase().includes(herbsCurrentCategory.toLowerCase());
+            var searchMatch = herbsSearchTerm === '' ||
+                herb.name.toLowerCase().includes(herbsSearchTerm) ||
+                herb.scientificName.toLowerCase().includes(herbsSearchTerm) ||
+                herb.category.toLowerCase().includes(herbsSearchTerm) ||
+                herb.description.toLowerCase().includes(herbsSearchTerm) ||
+                herb.benefits.some(function(b) { return b.toLowerCase().includes(herbsSearchTerm); }) ||
+                herb.uses.some(function(u) { return u.toLowerCase().includes(herbsSearchTerm); });
+            return categoryMatch && searchMatch;
+        });
+    }
+
+    function displayHerbs() {
+        var herbsGrid = document.getElementById('herbsGrid');
+        var noHerbsFound = document.getElementById('noHerbsFound');
+        var countNumber = document.getElementById('countNumber');
+        var filteredHerbs = filterHerbs();
+        if (filteredHerbs.length === 0) {
+            herbsGrid.innerHTML = '';
+            noHerbsFound.style.display = 'block';
+            countNumber.textContent = '0';
+        } else {
+            noHerbsFound.style.display = 'none';
+            countNumber.textContent = filteredHerbs.length;
+            herbsGrid.innerHTML = filteredHerbs.map(createHerbCard).join('');
+            document.querySelectorAll('.herb-card').forEach(function(card) {
+                card.addEventListener('click', function() {
+                    showHerbDetail(parseInt(this.dataset.herbId));
+                });
+            });
+        }
+    }
+
+    function createHerbCard(herb) {
+        var benefitsToShow = herb.benefits.slice(0, 4);
+        return '<div class="herb-card" data-herb-id="' + herb.id + '">' +
+            '<div class="herb-header"><h3 class="herb-name">' + herb.name + '</h3>' +
+            '<p class="herb-scientific">' + herb.scientificName + '</p>' +
+            '<span class="herb-category">' + herb.category + '</span></div>' +
+            '<p class="herb-description">' + herb.description + '</p>' +
+            '<div class="herb-benefits"><h4><i class="fas fa-check-circle"></i> Key Benefits</h4><ul>' +
+            benefitsToShow.map(function(b) { return '<li class="benefit-tag">' + b + '</li>'; }).join('') +
+            (herb.benefits.length > 4 ? '<li class="benefit-tag">+ more...</li>' : '') +
+            '</ul></div><div class="herb-learn-more">Learn More <i class="fas fa-arrow-right"></i></div></div>';
+    }
+
+    function setupModal() {
+        var modal = document.getElementById('herbModal');
+        var closeBtn = document.querySelector('.modal-close');
+        if (closeBtn) closeBtn.addEventListener('click', closeHerbModal);
+        window.addEventListener('click', function(e) { if (e.target === modal) closeHerbModal(); });
+        document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeHerbModal(); });
+    }
+
+    function showHerbDetail(herbId) {
+        var herb = herbsData.find(function(h) { return h.id === herbId; });
+        if (!herb) return;
+        var modal = document.getElementById('herbModal');
+        var herbDetail = document.getElementById('herbDetail');
+        herbDetail.innerHTML =
+            '<h2>' + herb.name + '</h2>' +
+            '<p class="herb-scientific">' + herb.scientificName + '</p>' +
+            '<span class="herb-category">' + herb.category + '</span>' +
+            '<div class="herb-detail-section"><h3><i class="fas fa-info-circle"></i> Description</h3><p>' + herb.description + '</p></div>' +
+            '<div class="herb-detail-section"><h3><i class="fas fa-heart"></i> Health Benefits</h3><ul>' + herb.benefits.map(function(b) { return '<li>' + b + '</li>'; }).join('') + '</ul></div>' +
+            '<div class="herb-detail-section"><h3><i class="fas fa-stethoscope"></i> Traditional Uses</h3><ul>' + herb.uses.map(function(u) { return '<li>' + u + '</li>'; }).join('') + '</ul></div>' +
+            '<div class="herb-detail-section"><h3><i class="fas fa-mortar-pestle"></i> Preparation &amp; Usage</h3><p>' + herb.preparation + '</p></div>' +
+            '<div class="herb-detail-section"><h3><i class="fas fa-pills"></i> Recommended Dosage</h3><p>' + herb.dosage + '</p></div>' +
+            '<div class="precaution-box"><h4><i class="fas fa-exclamation-triangle"></i> Precautions</h4><p>' + herb.precautions + '</p></div>';
+        modal.style.display = 'block';
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeHerbModal() {
+        var modal = document.getElementById('herbModal');
+        if (modal) { modal.style.display = 'none'; document.body.style.overflow = 'auto'; }
+    }
+    </script>
+
+    <!-- ============================================================ -->
+    <!-- REMEDIES PAGE JS (scoped init function) -->
+    <!-- ============================================================ -->
+    <script>
+    var remediesConditionsData = [];
+    var remediesCurrentCategory = 'all';
+    var remediesSearchTerm = '';
+    var remediesSetupDone = false;
+
+    function initRemediesPage() {
+        remediesConditionsData = window._conditionsData || [];
+        if (!remediesSetupDone) {
+            remediesSetupDone = true;
+            displayRemedies();
+            setupRemediesCategoryFilters();
+            setupRemediesSearch();
+        }
+    }
+
+    function setupRemediesCategoryFilters() {
+        var filterButtons = document.querySelectorAll('.category-filter-btn');
+        filterButtons.forEach(function(button) {
+            button.addEventListener('click', function() {
+                filterButtons.forEach(function(btn) { btn.classList.remove('active'); });
+                this.classList.add('active');
+                remediesCurrentCategory = this.dataset.category;
+                displayRemedies();
+            });
+        });
+    }
+
+    function setupRemediesSearch() {
+        var searchInput = document.getElementById('remedySearch');
+        if (searchInput) {
+            searchInput.addEventListener('input', function() {
+                remediesSearchTerm = this.value.toLowerCase().trim();
+                displayRemedies();
+            });
+        }
+    }
+
+    function filterConditions() {
+        return remediesConditionsData.filter(function(condition) {
+            var categoryMatch = remediesCurrentCategory === 'all' || condition.category === remediesCurrentCategory;
+            var searchMatch = remediesSearchTerm === '' ||
+                condition.name.toLowerCase().includes(remediesSearchTerm) ||
+                condition.category.toLowerCase().includes(remediesSearchTerm) ||
+                condition.symptoms.some(function(s) { return s.toLowerCase().includes(remediesSearchTerm); }) ||
+                condition.herbs.some(function(h) { return h.toLowerCase().includes(remediesSearchTerm); }) ||
+                condition.remedies.some(function(r) { return r.toLowerCase().includes(remediesSearchTerm); });
+            return categoryMatch && searchMatch;
+        });
+    }
+
+    function groupByCategory(conditions) {
+        var grouped = {};
+        conditions.forEach(function(condition) {
+            if (!grouped[condition.category]) grouped[condition.category] = [];
+            grouped[condition.category].push(condition);
+        });
+        return grouped;
+    }
+
+    function displayRemedies() {
+        var remediesContainer = document.getElementById('remediesContainer');
+        var noRemediesFound = document.getElementById('noRemediesFound');
+        var countNumber = document.getElementById('remediesCountNumber');
+        var filteredConditions = filterConditions();
+        if (filteredConditions.length === 0) {
+            remediesContainer.innerHTML = '';
+            noRemediesFound.style.display = 'block';
+            countNumber.textContent = '0';
+        } else {
+            noRemediesFound.style.display = 'none';
+            countNumber.textContent = filteredConditions.length;
+            var groupedConditions = groupByCategory(filteredConditions);
+            var sortedCategories = Object.keys(groupedConditions).sort();
+            remediesContainer.innerHTML = sortedCategories.map(function(cat) {
+                return createCategorySection(cat, groupedConditions[cat]);
+            }).join('');
+        }
+    }
+
+    function createCategorySection(category, conditions) {
+        var categoryIcons = {
+            'Respiratory': 'fa-lungs', 'Digestive': 'fa-stomach', 'Mental Health': 'fa-brain',
+            'Joint & Muscle': 'fa-bone', 'Skin': 'fa-hand-sparkles', 'Cardiovascular': 'fa-heartbeat',
+            "Women's Health": 'fa-female', "Men's Health": 'fa-male', 'Immunity': 'fa-shield-alt',
+            'Metabolic': 'fa-dna', 'Urinary': 'fa-tint', 'Eye Health': 'fa-eye',
+            'Neurological': 'fa-brain', 'Bone Health': 'fa-bone', 'Circulatory': 'fa-heart',
+            'Oral Health': 'fa-tooth', 'Sleep Disorder': 'fa-bed', 'ENT': 'fa-ear-listen',
+            'Endocrine': 'fa-dna', 'General': 'fa-notes-medical'
+        };
+        var icon = categoryIcons[category] || 'fa-notes-medical';
+        return '<div class="category-section"><h2><i class="fas ' + icon + '"></i> ' + category + '</h2>' +
+            '<div class="conditions-grid">' + conditions.map(createRemedyCard).join('') + '</div></div>';
+    }
+
+    function createRemedyCard(condition) {
+        return '<div class="remedy-card"><h3>' + condition.name + '</h3>' +
+            '<div class="remedy-section"><h4><i class="fas fa-leaf"></i> Herbs</h4><p class="remedy-list">' + condition.herbs.join(', ') + '</p></div>' +
+            '<div class="remedy-section"><h4><i class="fas fa-mortar-pestle"></i> Remedies</h4><p class="remedy-list">' + condition.remedies.slice(0, 3).join('; ') + '</p></div>' +
+            '<div class="remedy-section"><h4><i class="fas fa-utensils"></i> Diet</h4><p class="remedy-list">' + condition.diet.slice(0, 2).join(', ') + '</p></div>' +
+            '<div class="remedy-section"><h4><i class="fas fa-spa"></i> Lifestyle</h4><p class="remedy-list">' + condition.lifestyle.slice(0, 2).join(', ') + '</p></div></div>';
+    }
+    </script>
+
+</body>
+</html>
