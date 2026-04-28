@@ -7,11 +7,11 @@ The idea was to create something that can help users understand basic health iss
 
  What our project does
 
-  Lets users describe their symptoms
-  Matches them with possible Ayurvedic conditions
-  Suggests herbs, remedies, and lifestyle tips
-  Provides a herbs library with benefits and uses
-  Includes different health categories (digestive, mental health, immunity, etc.)
+  * Lets users describe their symptoms
+  * Matches them with possible Ayurvedic conditions
+  * Suggests herbs, remedies, and lifestyle tips
+  * Provides a herbs library with benefits and uses
+  * Includes different health categories (digestive, mental health, immunity, etc.)
 
  Built With
 
