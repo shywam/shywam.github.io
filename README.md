@@ -4,14 +4,14 @@ We built this chatbot to explore how traditional Ayurvedic knowledge can be comb
 
 The idea was to create something that can help users understand basic health issues and get natural remedy suggestions in a clean and easy way.
 
----
+
  What our project does
 
-* Lets users describe their symptoms
-* Matches them with possible Ayurvedic conditions
-* Suggests herbs, remedies, and lifestyle tips
-* Provides a herbs library with benefits and uses
-* Includes different health categories (digestive, mental health, immunity, etc.)
+  Lets users describe their symptoms
+  Matches them with possible Ayurvedic conditions
+  Suggests herbs, remedies, and lifestyle tips
+  Provides a herbs library with benefits and uses
+  Includes different health categories (digestive, mental health, immunity, etc.)
 
  Built With
 
@@ -19,7 +19,7 @@ The idea was to create something that can help users understand basic health iss
 * CSS
 * JavaScript (basic logic, no frameworks)
 
-⚙️ Features
+ Features
 
 * Single-page app style navigation
 * Symptom analyzer with dynamic results
